@@ -27,7 +27,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     "8000-barrycflynn-watchbidcen-wl2gcpiqcxa.ws-eu108.gitpod.io",
-    ".herokuapp.com",
+    ".herokuapp.com"
 ]
 
 
