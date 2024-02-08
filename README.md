@@ -1,3 +1,62 @@
+### declaration
+This site will be a marketplace for buying and selling watches, users will be able to **log** in to the site and leave **comments** and reply to **comments**, **bid** on offers, **place** an offer
+
+so the site will have 3 types of user a Site Admin, sellers and buyers
+
+the adverts should have a timer on them to expire to allow for bids to occur, timer set at advert creation and counts down on the card
+
+database table will be
+	comments
+	comments on comments
+	adverts
+		popular boolean
+		
+	user accounts
+
+technology used
+	django
+	whitenoise
+	crispy forms
+	oauth
+	elephantdb
+	bootstrap
+	
+
+### bootstrap templates from:https://startbootstrap.com/
+
+1. [Shop Homepage - Bootstrap Ecommerce Store Template - Start Bootstrap](https://startbootstrap.com/template/shop-homepage)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+
+
+
+
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome,
