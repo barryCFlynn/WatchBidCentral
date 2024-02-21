@@ -4,8 +4,61 @@
 
 <!-- index.html content starts here -->
 
+<!-- Header-->
+<!-- top_listings_carousel.html -->
+<!-- TODO  carousel is not call the data, will come back to it -->
+<header class="bg-dark py-5">
+    <div id="topListingsCarousel" class="carousel slide container px-4 px-lg-5 mt-5 bg-dark" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            {% for listing in top_listings %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Sale badge-->
+                        <div class="badge bg-dark text-white position-absolute bi bi-heart"
+                            style="top: 0.5rem; right: 0.5rem">
+                            {{ listing.likes }}</div>
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">{{ listing.title }}</h5>
+                                <h7 class="">Seller: {{ listing.author }}</h3>
+                                    <h7 class="">Time left: {{ listing.bid_timer }} </h7>
+                                    <!-- Product price if statement to show "Price" if "current_bid" is null-->
+                                    {% if listing.current_bid %}
+                                    <span class="text-muted">€ {{ listing.current_bid }}</span>
+                                    {% else %}
+                                    <span class="text-muted">€ {{ listing.price }}</span>
+                                    {% endif %}
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View Listing</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#topListingsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#topListingsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+</header>
+
 <div class="container px-4 px-lg-5 mt-5">
-    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4">
         {% for listing in listing_list %}
         <!-- List entries Column -->
         <div class="col mb-5">
@@ -20,22 +73,23 @@
                     <div class="text-center">
                         <!-- Product name-->
                         <h5 class="fw-bolder">{{ listing.title }}</h5>
-                        <h3 class=""> {{ listing.author }}</h3>
-                        <!-- Product reviews-->
-                        <div class="d-flex justify-content-center small text-warning mb-2">
+                        <h7 class="">Seller: {{ listing.author }}</h3>
+                            <h7 class="">Time left: {{ listing.bid_timer }} </h7>
+                            <!-- Product reviews-->
                             <!-- TODO removing stars to add in heart for likes -->
-                            <!-- <div class="bi-star-fill"></div>
+                            <!-- <div class="d-flex justify-content-center small text-warning mb-2">
                             <div class="bi-star-fill"></div>
                             <div class="bi-star-fill"></div>
                             <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div> -->
-                        </div>
-                        <!-- Product price-->
-                        {% if listing.current_bid %}
-                        <span class="text-muted">€ {{ listing.current_bid }}</span>
-                        {% else %}
-                        <span class="text-muted">€ {{ listing.price }}</span>
-                        {% endif %}
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                        </div> -->
+                            <!-- Product price if statement to show "Price" if "current_bid" is null-->
+                            {% if listing.current_bid %}
+                            <span class="text-muted">€ {{ listing.current_bid }}</span>
+                            {% else %}
+                            <span class="text-muted">€ {{ listing.price }}</span>
+                            {% endif %}
                     </div>
                 </div>
                 <!-- Product actions-->
@@ -44,14 +98,15 @@
                 </div>
             </div>
         </div>
-        {% if forloop.counter|divisibleby:4 %}
+        <!-- {% if forloop.counter|divisibleby:4 %}
     </div>
     <div class="row">
-        {% endif %}
+        {% endif %} -->
         {% endfor %}
 
     </div>
-    {% if is_paginated %}
+    <!-- TODO remove when confirmed no using pagination to and create buttons -->
+    <!-- {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
@@ -62,7 +117,7 @@
             {% endif %}
         </ul>
     </nav>
-    {% endif %}
+    {% endif %} -->
 </div>
 
 <!-- index.html content ends here -->

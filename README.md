@@ -20,6 +20,15 @@ technology used
 	oauth
 	elephantdb
 	bootstrap
+
+implementations
+
+will try to do:
+- the bid_timer does not have a function to coutndown the so it is a static number, if i cannot figure out how to implement it with heroku i may need to remove it as a feature to add later
+
+- carousel of most liked listings, have the top 10 most liked listings on a carousled on the top of the page scrolling width ways adding a different effect than the scroll down
+
+- main listing scroll effect, i want to add a independant scroll of the main listings section, this will one help to redice the over all height of the page and give the option to have a every growing list of items.
 	
 
 ### bootstrap templates from:https://startbootstrap.com/
