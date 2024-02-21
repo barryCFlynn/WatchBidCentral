@@ -57,6 +57,8 @@
     </div>
 </header>
 
+
+<!-- Main page List -->
 <div class="container px-4 px-lg-5 mt-5">
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4">
         {% for listing in listing_list %}
@@ -94,7 +96,9 @@
                 </div>
                 <!-- Product actions-->
                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View Listing</a></div>
+                    <div class="text-center">
+                        <a href="{% url 'watch_detail' listing.slug %}" class="btn btn-outline-dark mt-auto">View Listing</a>
+                    </div>
                 </div>
             </div>
         </div>

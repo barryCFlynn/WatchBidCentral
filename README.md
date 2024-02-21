@@ -15,7 +15,8 @@ database table will be
 
 technology used
 	django
-	whitenoise
+	summernote - expands the text input options such as adding: bold, fonts and sizing among others
+	whitenoise - used tto serve static files to Heroku
 	crispy forms
 	oauth
 	elephantdb
@@ -34,6 +35,10 @@ will try to do:
 ### bootstrap templates from:https://startbootstrap.com/
 
 1. [Shop Homepage - Bootstrap Ecommerce Store Template - Start Bootstrap](https://startbootstrap.com/template/shop-homepage)
+
+### referals
+
+watch placeholder image - https://www.shopify.com/ie/partners/blog/placeholder-images
 
 
 
