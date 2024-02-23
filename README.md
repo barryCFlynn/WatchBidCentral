@@ -15,12 +15,15 @@ database table will be
 
 technology used
 	django
+		oauth
+		flatpages - used for about page
 	summernote - expands the text input options such as adding: bold, fonts and sizing among others
-	whitenoise - used tto serve static files to Heroku
+	whitenoise - used to serve static files to Heroku
 	crispy forms
 	oauth
 	elephantdb
 	bootstrap
+	
 
 implementations
 

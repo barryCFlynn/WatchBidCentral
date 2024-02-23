@@ -16,9 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.flatpages import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path("", include("buy.urls"), name='buy-urls'),
+    # Temporary test URL for flatpage
+    path("about-us/", views.flatpage, {"url": "/about-us/"}, name="about-urls"),
+    # path('/about-us/', flat_views.flatpage, {'url': '/about-us/'}, name='about-us'),
 ]
