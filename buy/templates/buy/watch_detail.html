@@ -1,77 +1,103 @@
-<!-- from code institute -->
-
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
 {% load static %}
 
-<div class="masthead">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <!-- listing title goes in these h1 tags -->
-                <h1 class="listing-title">{{ listing.title }}</h1>
-                <!-- listing author goes before the | the listing's created date goes after -->
-                <p class="listing-subtitle">{{ listing.author }} | {{ listing.created_on }}</p>
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                <img src="{% static 'images/placeholder-watch.webp' %}" class="scale" alt="placeholder">
-            </div>
-        </div>
-    </div>
-</div>
+{% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
-            <div class="card-body">
-                <!-- The listing content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text">
-                    {{ listing.content | safe }}
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- from my project -->
-<!-- Main page List -->
 <div class="container px-4 px-lg-5 mt-5">
-    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4">
-        {% for listing in listing_list %}
-        <!-- List entries Column -->
-        <div class="col mb-5">
-            <div class="card h-100">
-                <!-- Sale badge-->
-                <div class="badge bg-dark text-white position-absolute bi bi-heart" style="top: 0.5rem; right: 0.5rem">
-                    {{ listing.likes }}</div>
-                <!-- Product image-->
-                <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                <!-- Product details-->
-                <div class="card-body p-4">
-                    <div class="text-center">
-                        <!-- Product name-->
-                        <h5 class="fw-bolder">{{ listing.title }}</h5>
-                        <h7 class="">Seller: {{ listing.author }}</h3>
-                            <h7 class="">Time left: {{ listing.bid_timer }} </h7>
-                            {% if listing.current_bid %}
-                            <span class="text-muted">€ {{ listing.current_bid }}</span>
-                            {% else %}
-                            <span class="text-muted">€ {{ listing.price }}</span>
-                            {% endif %}
+    <div class="row">
+        <!-- Watch Images -->
+        <div class="bg-dark col-md-6">
+            <div id="watchImagesCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Add images dynamically here -->
+                    {% if listing.images.all %}
+                    {% for image in listing.images.all %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <img src="{{ image.url }}" class="d-block w-100" alt="Watch Image">
                     </div>
+                    {% endfor %}
+                    {% else %}
+                    <!-- Show placeholder image if no images are available -->
+                    <div class="carousel-item active">
+                        <img src="{% static 'img/placeholder-watch.webp' %}" class="d-block w-100"
+                            alt="Placeholder Image">
+                    </div>
+                    {% endif %}
                 </div>
-                <!-- Product actions-->
-                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                    <div class="text-center">
-                        <a href="{% url 'watch_detail' listing.slug %}" class="btn btn-outline-dark mt-auto">View Listing</a>
+                <!-- Previous and Next buttons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#watchImagesCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#watchImagesCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <!-- Seller Details -->
+        <div class="col-md-6">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Seller Details</h5>
+                        <p class="card-text">Seller: {{ listing.author }}</p>
+                        <!-- Add other seller details here -->
+                        <!-- Example: Account age, links to other listings, etc. -->
                     </div>
                 </div>
             </div>
         </div>
-        {% endfor %}
-
+        <!-- Watch Details -->
+        <div class="row mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Watch Details</h5>
+                    <p class="card-text">Title: {{ listing.title }}</p>
+                    <p class="card-text">Manufacturer: {{ listing.manufacturer }}</p>
+                    <p class="card-text">Price: {% if listing.current_bid %}€ {{ listing.current_bid }}{% else %}€ {{
+                        listing.price }}{% endif %}</p>
+                    <!-- Add other watch details here -->
+                    <!-- Example: Time left, etc. -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Comments Section -->
+    <div class="row mt-5">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Comments</h5>
+                    <!-- Add comment form here -->
+                    <form>
+                        <!-- Comment Input -->
+                        <div class="mb-3">
+                            <label for="comment" class="form-label">Add a Comment:</label>
+                            <textarea class="form-control" id="comment" rows="3"></textarea>
+                        </div>
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    <!-- Display Comments -->
+                    <!-- Add comments dynamically here -->
+                    {% for comment in listing.comments.all %}
+                    <div class="mt-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-muted">{{ comment.author.username }}</h6>
+                                <p class="card-text">{{ comment.body }}</p>
+                                <!-- Add nested comments if needed -->
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<!-- index.html content ends here -->
 {% endblock %}

@@ -51,7 +51,7 @@ class Listing(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="blog_posts"
+        User, on_delete=models.CASCADE, related_name="user_listings"
     )
     # image_1 = CloudinaryField('image_1', default='placeholder')
     # image_2 = CloudinaryField('image_2', default='placeholder')
@@ -70,7 +70,7 @@ class Listing(models.Model):
         null=True,
         blank=True
     )
-    price = price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
     current_bid = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     reserve = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     likes = models.IntegerField(default=0)
@@ -79,7 +79,7 @@ class Listing(models.Model):
         ordering = ["created_on"]
 
     def __str__(self):
-        return f"The title of this post is {self.title} | written by {self.author}"
+        return f"The title of this listing is {self.title} | written by {self.author}"
 
 
 class Comment(models.Model):
