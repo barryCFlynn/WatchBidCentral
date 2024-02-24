@@ -1,6 +1,10 @@
 {% load static %}
 
 {% url 'home' as home_url %}
+{% url 'about-us' as about-url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,8 +34,8 @@
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                    <li class="nav-item"><a class="nav-link {% if request.path == '/' %}active{% endif %}"
+                            aria-current="page" href="{% url 'home' %}">Home</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
@@ -44,15 +48,29 @@
                             <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
                         </ul>
                     </li>
-                </ul>
-                <!-- TODO be removed as sight will have no actual cart function -->
-                <!-- <form class="d-flex">
-                    <button class="btn btn-outline-dark" type="submit">
-                        <i class="bi-cart-fill me-1"></i>
-                        Cart
-                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                    </button>
-                </form> -->
+                    <!-- Added About Page with Dynamic Active Class -->
+                    <li class="nav-item"><a class="nav-link {% if request.path == '/about-us/' %}active{% endif %}"
+                            href="{% url 'about-url' %}">About</a></li>
+
+                    <!-- Authentication Links -->
+                    <!-- Right-aligned items for showing logged-in user's name -->
+                    <ul class="navbar-nav ms-auto">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ user.username }}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownUser">
+                                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                                <!-- Add more user-specific items here if needed -->
+                            </ul>
+                        </li>
+                        {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">Register</a></li>
+                        {% endif %}
+                    </ul>
             </div>
         </div>
     </nav>

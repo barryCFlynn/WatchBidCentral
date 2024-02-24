@@ -5,17 +5,17 @@ so the site will have 3 types of user a Site Admin, sellers and buyers
 
 the adverts should have a timer on them to expire to allow for bids to occur, timer set at advert creation and counts down on the card
 
-database table will be
+### database table will be
 	comments
 	comments on comments
 	adverts
-		popular boolean
+	popular boolean
 		
 	user accounts
 
-technology used
+### technology used
 	django
-		oauth
+		allauth - django built in user authentication 
 		flatpages - used for about page
 	summernote - expands the text input options such as adding: bold, fonts and sizing among others
 	whitenoise - used to serve static files to Heroku
@@ -23,16 +23,37 @@ technology used
 	oauth
 	elephantdb
 	bootstrap
+
+## bugs
+
+### django frontpages, 
+	read up that this would be a great way to display a static page like a about page instead of creating a model for something that does not change. but running into major issues getting it to run.
+
+	steps taken:
+	added middleware to prevent the necessity for having a url pattern
+	remove middleware and added urlpattern to watchbidcentral urls.py
+	added "APPEND_SLASH = True" to help troubleshoot
+	in the flatpages admin section add domains for all known such as gitpod, heroku localhost
+
+	so far have not been able to resolve the issue, might end up scrapping the implementation. but moving on with the project for now to swin back.
+
+### Like Button
+	in setting up the like button to increment the database entry I had to use Javascript, but so far the error ""GET /like_listing/32/ HTTP/1.1" 401 36" appears and the button updates to remove the like count and only show the heart. 
+	not that when logged in that the function works but need to add a presentable error to the user when not logged in offering them to signup and make sure the likes count does not get removed
 	
 
-implementations
 
-will try to do:
-- the bid_timer does not have a function to coutndown the so it is a static number, if i cannot figure out how to implement it with heroku i may need to remove it as a feature to add later
+### example code to enter image to readme
+	<img src="assets\images\README-images\snake_board.png" alt="Picture of Snake Play board" width= 600px>
 
-- carousel of most liked listings, have the top 10 most liked listings on a carousled on the top of the page scrolling width ways adding a different effect than the scroll down
+### implementations
 
-- main listing scroll effect, i want to add a independant scroll of the main listings section, this will one help to redice the over all height of the page and give the option to have a every growing list of items.
+	will try to do:
+	- the bid_timer does not have a function to coutndown the so it is a static number, if i cannot figure out how to implement it with heroku i may need to remove it as a feature to add later
+
+	- carousel of most liked listings, have the top 10 most liked listings on a carousled on the top of the page scrolling width ways adding a different effect than the scroll down
+
+	- main listing scroll effect, i want to add a independant scroll of the main listings section, this will one help to redice the over all height of the page and give the option to have a every growing list of items.
 	
 
 ### bootstrap templates from:https://startbootstrap.com/
