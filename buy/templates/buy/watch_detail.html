@@ -1,4 +1,4 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
@@ -72,15 +72,18 @@
                 <div class="card-body">
                     <h5 class="card-title">Comments</h5>
                     <!-- Add comment form here -->
-                    <form>
-                        <!-- Comment Input -->
+                    {% if request.user.is_authenticated %}
+                    <form method="post" action="{% url 'add_comment_to_listing' listing.id %}">
+                        {% csrf_token %}
                         <div class="mb-3">
                             <label for="comment" class="form-label">Add a Comment:</label>
-                            <textarea class="form-control" id="comment" rows="3"></textarea>
+                            <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
                         </div>
-                        <!-- Submit Button -->
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
+                    {% else %}
+                    <p>Please <a href="{% url 'account_login' %}">sign in</a> to add comments.</p>
+                    {% endif %}
                     <!-- Display Comments -->
                     <!-- Add comments dynamically here -->
                     {% for comment in listing.comments.all %}

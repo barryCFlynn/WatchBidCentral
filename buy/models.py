@@ -1,7 +1,10 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.conf import settings
 from datetime import timedelta
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
+
 # from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1,"Listed"))
@@ -53,9 +56,6 @@ class Listing(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="user_listings"
     )
-    # image_1 = CloudinaryField('image_1', default='placeholder')
-    # image_2 = CloudinaryField('image_2', default='placeholder')
-    # image_3 = CloudinaryField('image_3', default='placeholder')
     manufacturer = models.CharField(max_length=100, choices=MANUFACTURER_CHOICES, default='None Selected')
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
@@ -81,18 +81,35 @@ class Listing(models.Model):
     def __str__(self):
         return f"The title of this listing is {self.title} | written by {self.author}"
 
+class ListingImage(models.Model):
+    listing = models.ForeignKey(Listing, related_name='images', on_delete=models.CASCADE)
+    image = CloudinaryField('image')
+
+    def __str__(self):
+        return f"{self.listing.title} Image"
 
 class Comment(models.Model):
     """
-    Stores single comment entry related to :model:`auth.User`,
-    :model:`buy.Listing` and :model:`buy.Comment` .
+    Stores a single comment entry related to :model:`auth.User` and :model:`buy.Listing`.
+    Supports nested comments through the 'parent_comment' field.
     """
     listing = models.ForeignKey(
-        Listing, on_delete=models.CASCADE, related_name="comments")
+        Listing, 
+        on_delete=models.CASCADE, 
+        related_name="comments"
+    )
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="commenter")
+        settings.AUTH_USER_MODEL,  # More flexible reference to the User model
+        on_delete=models.CASCADE, 
+        related_name="user_comments"
+    )
     parent_comment = models.ForeignKey(
-        'self', on_delete=models.CASCADE, null=True, blank=True) 
+        'self', 
+        on_delete=models.CASCADE, 
+        null=True, 
+        blank=True,
+        related_name="replies"  # Helps in querying child comments of a parent
+    )
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     
@@ -100,4 +117,5 @@ class Comment(models.Model):
         ordering = ["created_on"]
 
     def __str__(self):
-        return f"Comment {self.body} by {self.author}"
+        # Truncate body in string representation for readability
+        return f"Comment by {self.author}: {self.body[:30]}{'...' if len(self.body) > 30 else ''}"

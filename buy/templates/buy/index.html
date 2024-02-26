@@ -72,51 +72,38 @@
                     <i class="bi bi-heart"></i> <span id="likes-count-{{ listing.id }}">{{ listing.likes }}</span>
                 </button>
                 <!-- Product image-->
-                <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                {% with listing.images.first as image %}
+                {% if image %}
+                <img class="card-img-top" src="{{ image.image.url }}" alt="{{ listing.title }}">
+                {% else %}
+                <img class="card-img-top" src="{% static 'img/placeholder-watch.webp' %}" alt="placeholder image">
+                {% endif %}
+                {% endwith %}
                 <!-- Product details-->
                 <div class="card-body p-4">
                     <div class="text-center">
                         <!-- Product name-->
                         <h5 class="fw-bolder">{{ listing.title }}</h5>
-                        <h7 class="">Seller: {{ listing.author }}</h3>
-                            <h7 class="">Time left: {{ listing.bid_timer }} </h7>
-                            <!-- Product price if statement to show "Price" if "current_bid" is null-->
-                            {% if listing.current_bid %}
-                            <span class="text-muted">€ {{ listing.current_bid }}</span>
-                            {% else %}
-                            <span class="text-muted">€ {{ listing.price }}</span>
-                            {% endif %}
+                        <h7 class="">Seller: {{ listing.author }}</h7>
+                        <h7 class="">Time left: {{ listing.bid_timer }}</h7>
+                        <!-- Product price if statement to show "Price" if "current_bid" is null-->
+                        {% if listing.current_bid %}
+                        <span class="text-muted">€ {{ listing.current_bid }}</span>
+                        {% else %}
+                        <span class="text-muted">€ {{ listing.price }}</span>
+                        {% endif %}
                     </div>
                 </div>
                 <!-- Product actions-->
                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                     <div class="text-center">
-                        <a href="{% url 'watch_detail' listing.slug %}" class="btn btn-outline-dark mt-auto">View
-                            Listing</a>
+                        <a class="btn btn-outline-dark mt-auto" href="{% url 'watch_detail' listing.slug %}">View Listing</a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- {% if forloop.counter|divisibleby:4 %}
-    </div>
-    <div class="row">
-        {% endif %} -->
         {% endfor %}
-
     </div>
-    <!-- TODO remove when confirmed no using pagination to and create buttons -->
-    <!-- {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREVIOUS</a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %} -->
 </div>
 
 <!-- index.html content ends here -->

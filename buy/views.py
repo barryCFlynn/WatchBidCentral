@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 from django.views import generic
 from django.views.decorators.http import require_GET
+from django.urls import reverse
 from .models import Listing
 
 
@@ -56,3 +57,12 @@ def like_listing(request, listing_id):
     listing.likes += 1
     listing.save()
     return JsonResponse({'likes': listing.likes})
+
+def add_comment_to_listing(request, listing_id):
+    listing = get_object_or_404(Listing, id=listing_id)
+    if request.method == "POST":
+        comment_body = request.POST.get('comment')
+        comment = Comment(listing=listing, author=request.user, body=comment_body)
+        comment.save()
+        return HttpResponseRedirect(reverse('watch_detail', args=[listing.slug]))
+    # Redirect or show an error if not POST request or other conditions are not met
