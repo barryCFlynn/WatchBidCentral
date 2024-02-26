@@ -54,6 +54,8 @@ the adverts should have a timer on them to expire to allow for bids to occur, ti
 	- carousel of most liked listings, have the top 10 most liked listings on a carousled on the top of the page scrolling width ways adding a different effect than the scroll down
 
 	- main listing scroll effect, i want to add a independant scroll of the main listings section, this will one help to redice the over all height of the page and give the option to have a every growing list of items.
+
+ 	- Nested Comments, I want to have the ability to have nested comments and them to display on the listing page. stack overflow link to get started https://stackoverflow.com/questions/56596266/how-to-make-nested-replies-for-comments-in-django
 	
 
 ### bootstrap templates from:https://startbootstrap.com/
