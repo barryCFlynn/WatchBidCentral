@@ -4,49 +4,41 @@
 {% block content %}
 
 <!-- index.html content starts here -->
-<!-- top_listings_carousel.html -->
+<!-- like_listings_carousel.html -->
 <!-- TODO  carousel is not call the data, will come back to it -->
-<header class="bg-dark py-5">
-    <div id="topListingsCarousel" class="carousel slide container px-4 px-lg-5 mt-5 bg-dark" data-bs-ride="carousel">
+<div class="bg-dark py-5">
+    <div id="topListingsCarousel" class="container carousel slide px-4 px-lg-5 mt-5 bg-dark" data-bs-ride="carousel">
         <div class="carousel-inner">
-            {% for listing in top_listings %}
+            {% for listing in like_listings %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
                 <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Likes Button i want to see if this is updating-->
-                        <button id="like-button-{{ listing.id }}" class="like-btn btn btn-dark position-absolute"
-                            data-listing-id="{{ listing.id }}" style="top: 0.5rem; right: 0.5rem">
-                            <i class="bi bi-heart"></i> <span id="likes-count-{{ listing.id }}">{{ listing.likes
-                                }}</span>
-                        </button>
-                        <button class="like-button" data-listing-id="{{ listing.id }}">Like</button>
-                        <!-- Product image-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                        <!-- Product details-->
+                    <div class="card h-25">
+                        <!-- Likes display -->
+                        <div id="like-display-{{ listing.id }}" class="like-display position-absolute" style="top: 0.5rem; right: 0.5rem; color: white; background-color: #343a40; padding: 0.375rem 0.75rem; border-radius: 0.25rem;">
+                            <i class="bi bi-heart"></i> <span id="likes-count-{{ listing.id }}">{{ listing.likes }}</span>
+                        </div>
+                        <!-- Product image wrapped with an anchor tag for clickable images -->
+                        <a href="{% url 'watch_detail' listing.slug %}">
+                            {% with listing.images.first as image %}
+                                {% if image %}
+                                    <img class="card-img-top" src="{{ image.image.url }}" alt="{{ listing.title }}" style="max-height: 300px; width: auto; display: block; margin: 0 auto;">
+                                {% else %}
+                                    <img class="card-img-top" src="{% static 'img/placeholder-watch.webp' %}" alt="placeholder image" style="max-height: 300px; width: auto; display: block; margin: 0 auto;">
+                                {% endif %}
+                            {% endwith %}
+                        </a>
+                        <!-- Product details -->
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <!-- Product name-->
+                                <!-- Product name -->
                                 <h5 class="fw-bolder">{{ listing.title }}</h5>
-                                <h7 class="">Seller: {{ listing.author }}</h3>
-                                    <h7 class="">Time left: {{ listing.bid_timer }} </h7>
-                                    <!-- Product price if statement to show "Price" if "current_bid" is null-->
-                                    {% if listing.current_bid %}
-                                    <span class="text-muted">€ {{ listing.current_bid }}</span>
-                                    {% else %}
-                                    <span class="text-muted">€ {{ listing.price }}</span>
-                                    {% endif %}
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View Listing</a>
+                                <p>Time left: {{ listing.bid_timer }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        {% endfor %}
+            {% endfor %}
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#topListingsCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -57,11 +49,11 @@
         <span class="visually-hidden">Next</span>
     </button>
     </div>
-</header>
+</div>
 
 
 <!-- Main page List -->
-<div class="container px-4 px-lg-5 mt-5">
+<div class="container py-5 px-4 px-lg-5 mt-5">
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4">
         {% for listing in listing_list %}
         <!-- List entries Column -->

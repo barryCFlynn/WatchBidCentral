@@ -661,11 +661,11 @@ progress {
     max-width: 1140px;
   }
 }
-@media (min-width: 1400px) {
+/* @media (min-width: 1400px) {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1320px;
   }
-}
+} */
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -10824,3 +10824,23 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+
+
+/* Custom CSS start */
+.carousel-item-custom img {
+  max-height: 300px; /* Controls the image size */
+  width: auto; /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto; /* Center the image */
+}
+
+.carousel-item-custom .card {
+  max-height: 500px; /* Adjust based on your needs to control the card size */
+  overflow: hidden; /* Keeps the content within the bounds of max-height */
+}
+
+.carousel-custom.slide {
+  margin-bottom: 2rem; /* Ensures there's space between the carousel and the listing grid below */
+}
+/* Custom CSS end */

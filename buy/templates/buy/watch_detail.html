@@ -5,7 +5,7 @@
 
 <div class="container px-4 px-lg-5 mt-5">
     <div class="row">
-        <!-- Watch Images -->
+        <!-- Watch Images Carousel -->
         <div class="bg-dark col-md-6">
             <div id="watchImagesCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -73,7 +73,7 @@
                     <h5 class="card-title">Comments</h5>
                     <!-- Add comment form here -->
                     {% if request.user.is_authenticated %}
-                    <form method="post" action="{% url 'add_comment_to_listing' listing.id %}">
+                    <form method="post" action="{% url 'add_comment_to_listing' slug=listing.slug %}">
                         {% csrf_token %}
                         <div class="mb-3">
                             <label for="comment" class="form-label">Add a Comment:</label>

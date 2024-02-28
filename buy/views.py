@@ -1,28 +1,29 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
-from django.views import generic
+from django.views.generic import ListView
+from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_GET
 from django.urls import reverse
-from .models import Listing
+from .models import Listing, Comment
 
 
 # Create your views here.
-class ListingsList(generic.ListView):
-    queryset = Listing.objects.filter(status=1) #Filter out "draft" listing status=0
+class ListingsList(ListView):
+    model = Listing
     template_name = "buy/index.html"
-    ordering = ['-created_on']  # Ordering by created_on field in descending order
-    # TODO remove paginate once implement single page 
-    # scrolling through inventory
-    # paginate_by = 8
+    context_object_name = 'listing_list'  # This will be used to access the listings in the template
+    queryset = Listing.objects.filter(status=1).order_by('-created_on')  # Adjusted for clarity
 
-#TODO fix this, it is not grabbing the iformation
-class top_listings_carousel(generic.ListView):
-    def get(self, request, *args, **kwargs):
-        return super().get(request, *args, **kwargs)
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        # Add in the top 7 most liked listings
+        context['like_listings'] = Listing.objects.order_by('-likes')[:7]
+        return context
 
-    queryset = Listing.objects.filter(status=1)
-    template_name = "buy/index.html"
-    ordering = ('-likes')[:10]
+
+
+
 
 def watch_detail(request, slug):
     """
@@ -37,16 +38,16 @@ def watch_detail(request, slug):
 
     :template:`buy/watch_detail.html`
     """
+    listing = get_object_or_404(Listing, slug=slug)
+    return render(request, 'buy/watch_detail.html', {'listing': listing})
 
-    # Retrieve the Listing object with the specified slug or return a 404 error if not found
-    watch = get_object_or_404(Listing, slug=slug, status=1)  # Filter by status=1 to only get active listings
-
-    # Pass the watch object to the template context and render the template
-    return render(
-        request,
-        "buy/watch_detail.html",
-        {"watch": watch},  # Pass the watch object as context data
-    )
+# def like_carousel(request):
+#     # Fetch the top 7 most liked listings
+#     like_listings = Listing.objects.order_by('-likes')[:7]
+#     context = {
+#         'like_listings': like_listings,
+#     }
+#     return render(request, 'index.html', context)
 
 def like_listing(request, listing_id):
     # Ensure this action only happens for authenticated users
@@ -58,11 +59,14 @@ def like_listing(request, listing_id):
     listing.save()
     return JsonResponse({'likes': listing.likes})
 
-def add_comment_to_listing(request, listing_id):
-    listing = get_object_or_404(Listing, id=listing_id)
+@login_required
+def add_comment_to_listing(request, slug):
+    listing = get_object_or_404(Listing, slug=slug)
     if request.method == "POST":
         comment_body = request.POST.get('comment')
         comment = Comment(listing=listing, author=request.user, body=comment_body)
         comment.save()
-        return HttpResponseRedirect(reverse('watch_detail', args=[listing.slug]))
-    # Redirect or show an error if not POST request or other conditions are not met
+        return redirect('watch_detail', slug=slug)
+    else:
+        # Optionally handle the case for GET request or show an error
+        return redirect('watch_detail', slug=listing.slug)
