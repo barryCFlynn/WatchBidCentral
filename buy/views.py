@@ -22,9 +22,6 @@ class ListingsList(ListView):
         return context
 
 
-
-
-
 def watch_detail(request, slug):
     """
     Display an individual :model:`buy.Listing`.

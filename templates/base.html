@@ -40,17 +40,20 @@
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#!">All Products</a></li>
+                            {% if user.is_authenticated %}<!-- "and user.is_verified" add when verfied added  -->
+                            <li><a class="nav-link" href="{% url 'create-listing' %}">Create Listing</a>
+                            </li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
+                            {% endif %}
                             <li><a class="dropdown-item" href="#!">Popular Items</a></li>
                             <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
                         </ul>
                     </li>
                     <!-- Added About Page with Dynamic Active Class -->
                     <li class="nav-item"><a class="nav-link {% if request.path == '/about-us/' %}active{% endif %}"
-                            href="{% url 'about-url' %}">About</a></li>
+                            href="/about-us/">About Us</a></li>
 
                     <!-- Authentication Links -->
                     <!-- Right-aligned items for showing logged-in user's name -->
@@ -74,6 +77,19 @@
             </div>
         </div>
     </nav>
+
+    <div>
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
 
     <!-- Section-->
     <section class="py-5">

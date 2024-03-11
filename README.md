@@ -26,7 +26,7 @@ the adverts should have a timer on them to expire to allow for bids to occur, ti
 
 ## bugs
 
-### django frontpages, 
+### django flatpages, 
 	read up that this would be a great way to display a static page like a about page instead of creating a model for something that does not change. but running into major issues getting it to run.
 
 	steps taken:
@@ -36,6 +36,8 @@ the adverts should have a timer on them to expire to allow for bids to occur, ti
 	in the flatpages admin section add domains for all known such as gitpod, heroku localhost
 
 	so far have not been able to resolve the issue, might end up scrapping the implementation. but moving on with the project for now to swin back.
+
+	going to scratch this and opt for a standard mobel implementation, I have been unable to implement flatpages, keep getting 404 error. And this is taking up too much time.
 
 ### Like Button
 	in setting up the like button to increment the database entry I had to use Javascript, but so far the error ""GET /like_listing/32/ HTTP/1.1" 401 36" appears and the button updates to remove the like count and only show the heart. 
@@ -47,6 +49,17 @@ the adverts should have a timer on them to expire to allow for bids to occur, ti
 	<img src="assets\images\README-images\snake_board.png" alt="Picture of Snake Play board" width= 600px>
 
 ### implementations
+
+	things left:
+	bid timer count down - could have
+	shop link filtering - should have
+	like count icon on watch detaul page - must have
+	nested comments - could have
+	about page - must have
+	create listing form - must have (logged in users)
+	automated testing - could have
+	readme - must have
+	
 
 	will try to do:
 	- the bid_timer does not have a function to coutndown the so it is a static number, if i cannot figure out how to implement it with heroku i may need to remove it as a feature to add later
