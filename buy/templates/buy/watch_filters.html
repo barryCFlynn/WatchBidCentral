@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- watch_filter content starts here -->
+<!-- Main page List -->
+<div class="container py-5 px-4 px-lg-5 mt-5">
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4">
+        {% for listing in listing_list %}
+        <!-- List entries Column -->
+        <div class="col mb-5">
+            <div class="card h-100">
+                <!-- Likes Button-->
+                <button id="like-button-{{ listing.id }}" class="like-btn btn btn-dark position-absolute" data-listing-id="{{ listing.id }}" style="top: 0.5rem; right: 0.5rem">
+                    <i class="bi bi-heart"></i> <span id="likes-count-{{ listing.id }}">{{ listing.likes }}</span>
+                </button>
+                <!-- Product image-->
+                {% with listing.images.first as image %}
+                {% if image %}
+                <img class="card-img-top" src="{{ image.image.url }}" alt="{{ listing.title }}">
+                {% else %}
+                <img class="card-img-top" src="{% static 'img/placeholder-watch.webp' %}" alt="placeholder image">
+                {% endif %}
+                {% endwith %}
+                <!-- Product details-->
+                <div class="card-body p-4">
+                    <div class="text-center">
+                        <!-- Product name-->
+                        <h5 class="fw-bolder">{{ listing.title }}</h5>
+                        <h7 class="">Seller: {{ listing.author }}</h7>
+                        <h7 class="">Time left: {{ listing.bid_timer }}</h7>
+                        <!-- Product price if statement to show "Price" if "current_bid" is null-->
+                        {% if listing.current_bid %}
+                        <span class="text-muted">€ {{ listing.current_bid }}</span>
+                        {% else %}
+                        <span class="text-muted">€ {{ listing.price }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- Product actions-->
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="text-center">
+                        <a class="btn btn-outline-dark mt-auto" href="{% url 'watch_detail' listing.slug %}">View Listing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- index.html content ends here -->
+{% endblock content %}
+
+{% block extras %}
+<script src="{% static 'js/likes.js' %}"></script>
+{% endblock %}

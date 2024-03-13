@@ -53,20 +53,21 @@ the adverts should have a timer on them to expire to allow for bids to occur, ti
 	things left:
 	bid timer count down - could have
 	shop link filtering - should have
-	like count icon on watch detaul page - must have
+	like count icon on watch detail page - must have
 	nested comments - could have
 	about page - must have
-	create listing form - must have (logged in users)
+	create listing form - must have (logged in users) - done
 	automated testing - could have
 	readme - must have
+	like model - to track who likes and prevent mutiple likes from one user
 	
 
 	will try to do:
 	- the bid_timer does not have a function to coutndown the so it is a static number, if i cannot figure out how to implement it with heroku i may need to remove it as a feature to add later
 
-	- carousel of most liked listings, have the top 10 most liked listings on a carousled on the top of the page scrolling width ways adding a different effect than the scroll down
+	- carousel of most liked listings, have the top 10 most liked listings on a carousled on the top of the page scrolling width ways adding a different effect than the scroll down - done
 
-	- main listing scroll effect, i want to add a independant scroll of the main listings section, this will one help to redice the over all height of the page and give the option to have a every growing list of items.
+	- main listing scroll effect, i want to add a independant scroll of the main listings section, this will one help to reduce the over all height of the page and give the option to have a every growing list of items.
 
  	- Nested Comments, I want to have the ability to have nested comments and them to display on the listing page. stack overflow link to get started https://stackoverflow.com/questions/56596266/how-to-make-nested-replies-for-comments-in-django
 	
