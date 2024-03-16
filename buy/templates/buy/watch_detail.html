@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
 {% block content %}
 
 <div class="container px-4 px-lg-5 mt-5">
@@ -13,7 +14,7 @@
                     {% if listing.images.all %}
                     {% for image in listing.images.all %}
                     <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                        <img src="{{ image.url }}" class="d-block w-100" alt="Watch Image">
+                        <img src="{{ image.image.url }}" class="d-block w-100" alt="Watch Image">
                     </div>
                     {% endfor %}
                     {% else %}
@@ -43,9 +44,8 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Seller Details</h5>
-                        <p class="card-text">Seller: {{ listing.author }}</p>
-                        <!-- Add other seller details here -->
-                        <!-- Example: Account age, links to other listings, etc. -->
+                        <p class="card-text">Seller: {{ listing.author.first_name }} {{ listing.author.last_name }}</p>
+                        <p class="card-text">Date Joined: {{ listing.author.date_joined.date }}</p>
                     </div>
                 </div>
             </div>
@@ -57,10 +57,10 @@
                     <h5 class="card-title">Watch Details</h5>
                     <p class="card-text">Title: {{ listing.title }}</p>
                     <p class="card-text">Manufacturer: {{ listing.manufacturer }}</p>
-                    <p class="card-text">Price: {% if listing.current_bid %}€ {{ listing.current_bid }}{% else %}€ {{
-                        listing.price }}{% endif %}</p>
-                    <!-- Add other watch details here -->
-                    <!-- Example: Time left, etc. -->
+                    <p class="card-text">Created Date: {{ listing.created_on }}</p>
+                    <p class="card-text">Starting Price: {{ listing.price }}</p>
+                    <p class="card-text">Curent Bid: {{ listing.current_bid }}</p>
+                    <p class="card-text">Description: {{ listing.body }}</p>
                 </div>
             </div>
         </div>

@@ -42,7 +42,13 @@ the adverts should have a timer on them to expire to allow for bids to occur, ti
 ### Like Button
 	in setting up the like button to increment the database entry I had to use Javascript, but so far the error ""GET /like_listing/32/ HTTP/1.1" 401 36" appears and the button updates to remove the like count and only show the heart. 
 	not that when logged in that the function works but need to add a presentable error to the user when not logged in offering them to signup and make sure the likes count does not get removed
+
+### Listing images not loading on watch_detail page
+	unkown so far
 	
+
+### Price showing as "{{ listing.price }}" instead of integer
+	unkown so far
 
 
 ### example code to enter image to readme

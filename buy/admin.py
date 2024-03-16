@@ -6,7 +6,7 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(Listing)
 class BuyAdmin(SummernoteModelAdmin):
 
-    list_display = ('title', 'slug', 'author' ,'created_on', 'status','manufacturer', 'likes', 'price')
+    list_display = ('title', 'slug', 'author' ,'created_on', 'status','manufacturer', 'likes', 'price', 'reserve', 'current_bid')
     search_fields = ['title']
     list_filter = ('manufacturer', 'likes', 'price')
     prepopulated_fields = {'slug': ('title',)}

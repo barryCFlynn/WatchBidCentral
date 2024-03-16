@@ -99,7 +99,7 @@ class Comment(models.Model):
         related_name="comments"
     )
     author = models.ForeignKey(
-        settings.AUTH_USER_MODEL,  # More flexible reference to the User model
+        settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE, 
         related_name="user_comments"
     )
