@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import CreateListing
+from buy.models import Listing
 
 @login_required
 def create_listing(request):
@@ -18,3 +19,9 @@ def create_listing(request):
     else:
         form = CreateListing()
     return render(request, 'sell/create_listing.html', {'form': form})
+
+@login_required
+def my_listings(request):
+    # Query listings by the current logged-in user
+    listings = Listing.objects.filter(author=request.user).order_by('-created_on')  # Adjust 'date_posted' accordingly
+    return render(request, 'sell/my_listings.html', {'listings': listings})
