@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, render, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import CreateListing
@@ -15,7 +15,7 @@ def create_listing(request):
             # Add a success message
             messages.success(request, 'Your listing was created successfully!')
             # Redirect to the watch_detail view of the new listing
-            return redirect(reverse('buy:watch_detail', args=[listing.slug]))
+            return redirect(reverse('watch_detail', args=[listing.slug]))
     else:
         form = CreateListing()
     return render(request, 'sell/create_listing.html', {'form': form})

@@ -26,5 +26,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path("", include("buy.urls"), name='buy-url'),
-    path("", include("sell.urls"))
+    path("", include("sell.urls"), name='sell-url'),
 ]

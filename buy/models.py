@@ -1,8 +1,9 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.conf import settings
-from datetime import timedelta
 from django.contrib.auth.models import User
+from django.utils.text import slugify
+from datetime import timedelta
 from cloudinary.models import CloudinaryField
 
 # from cloudinary.models import CloudinaryField
@@ -51,8 +52,8 @@ class Listing(models.Model):
         # Add more choices as needed
     ]
     title = models.CharField(max_length=200, unique=True)
-    status = models.IntegerField(choices=STATUS, default=0)
-    slug = models.SlugField(max_length=200, unique=True)
+    status = models.IntegerField(choices=STATUS, default=1)
+    slug = models.SlugField(max_length=200, unique=True, blank=True, null=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="user_listings"
     )
@@ -74,6 +75,20 @@ class Listing(models.Model):
     current_bid = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     reserve = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     likes = models.IntegerField(default=0)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:  # Check if the slug needs to be generated
+            # Generate slug ensuring uniqueness using a UUID
+            self.slug = slugify(self.title)[:180]  # Trim slug size to fit max_length if necessary
+            unique_slug = self.slug
+            num = 1
+            while Listing.objects.filter(slug=unique_slug).exists():
+                unique_slug = '{}-{}'.format(self.slug, num)
+                num += 1
+            self.slug = unique_slug
+
+        super(Listing, self).save(*args, **kwargs)
+
 
     class Meta:
         ordering = ["created_on"]
