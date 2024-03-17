@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import CreateListing
@@ -25,3 +25,18 @@ def my_listings(request):
     # Query listings by the current logged-in user
     listings = Listing.objects.filter(author=request.user).order_by('-created_on')  # Adjust 'date_posted' accordingly
     return render(request, 'sell/my_listings.html', {'listings': listings})
+
+@login_required
+def delete_listing(request, listing_id):
+    listing = get_object_or_404(Listing, id=listing_id)
+    
+    if listing.author != request.user:
+        messages.error(request, "You do not have permission to delete this listing.")
+        return redirect('watch_detail', listing.slug)
+    
+    if request.method == 'POST':
+        listing.delete()
+        messages.success(request, "Your listing was successfully deleted.")
+        return redirect('my-listings')
+    else:
+        return redirect('watch_detail', listing.slug)

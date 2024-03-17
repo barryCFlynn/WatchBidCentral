@@ -46,6 +46,12 @@
                         <h5 class="card-title">Seller Details</h5>
                         <p class="card-text">Seller: {{ listing.author.first_name }} {{ listing.author.last_name }}</p>
                         <p class="card-text">Date Joined: {{ listing.author.date_joined.date }}</p>
+                        {% if user.is_authenticated and listing.author == user %}
+                        <form action="{% url 'listing-delete' listing.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger">Delete Listing</button>
+                        </form>
+                        {% endif %}
                     </div>
                 </div>
             </div>
