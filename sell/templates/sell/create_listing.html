@@ -2,13 +2,18 @@
 
 {% load crispy_forms_tags %}
 
-
 {% block content %}
 <div class="container px-4 px-lg-5 mt-5">
     <h2>Create Listing</h2>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form|crispy }}
+        
+        <div class="mb-3">
+            <label for="images" class="form-label">Images:</label>
+            <input type="file" class="form-control" id="images" name="images" multiple>
+        </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

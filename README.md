@@ -77,6 +77,18 @@ the adverts should have a timer on them to expire to allow for bids to occur, ti
 
  	- Nested Comments, I want to have the ability to have nested comments and them to display on the listing page. stack overflow link to get started https://stackoverflow.com/questions/56596266/how-to-make-nested-replies-for-comments-in-django
 	
+### testing
+
+login
+logout
+view liked carousel
+view listing list
+create listing
+edit listing
+delete listing
+view my liked listings
+view my listings
+write a comment
 
 ### bootstrap templates from:https://startbootstrap.com/
 

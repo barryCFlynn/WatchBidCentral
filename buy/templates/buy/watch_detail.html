@@ -48,10 +48,14 @@
                         <p class="card-text">Seller: {{ listing.author.first_name }} {{ listing.author.last_name }}</p>
                         <p class="card-text">Date Joined: {{ listing.author.date_joined.date }}</p>
                         {% if user.is_authenticated and listing.author == user %}
-                        <form action="{% url 'listing-delete' listing.id %}" method="post">
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-danger">Delete Listing</button>
-                        </form>
+                        <div>
+                            <a href="{% url 'edit-listing' slug=listing.slug %}" class="btn btn-primary">Edit</a>
+                            <form action="{% url 'listing-delete' listing.id %}" method="post" style="display: inline;">
+                                {% csrf_token %}
+                                <input type="hidden" name="next" value="{{ request.path }}">
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this listing?');">Delete</button>
+                            </form>
+                        </div>
                         {% endif %}
                     </div>
                 </div>
