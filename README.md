@@ -44,11 +44,11 @@ the adverts should have a timer on them to expire to allow for bids to occur, ti
 	not that when logged in that the function works but need to add a presentable error to the user when not logged in offering them to signup and make sure the likes count does not get removed
 
 ### Listing images not loading on watch_detail page
-	unkown so far
+	fixed, the issue was the iteration was incorrect
 	
 
 ### Price showing as "{{ listing.price }}" instead of integer
-	unkown so far
+	fixed by removing the if statment to show either the price of the bid, these should be shown seperately
 
 
 ### example code to enter image to readme
