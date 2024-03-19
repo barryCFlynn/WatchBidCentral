@@ -69,15 +69,15 @@
                     <p class="card-text">Title: {{ listing.title }}</p>
                     <p class="card-text">Manufacturer: {{ listing.manufacturer }}</p>
                     <p class="card-text">Created Date: {{ listing.created_on }}</p>
-                    <p class="card-text">Starting Price: {{ listing.price }}</p>
-                    <p class="card-text">Curent Bid: {{ listing.current_bid }}
+                    <p class="card-text">Starting Price: € {{ listing.price }}</p>
+                    <p class="card-text">Curent Bid: € {{ listing.current_bid }}
                         {% if user.is_authenticated and user != listing.author %}
-                        <button id="show-bid-form" class="btn btn-secondary">Place a Bid</button>
+                        <button id="show-bid-form" class="btn btn-secondary btn-sm">Place a Bid</button>
                     <form id="bid-form" method="post" action="{% url 'place_bid' listing.id %}" style="display:none;">
                         {% csrf_token %}
                         <input type="number" name="bid_amount" min="{{ listing.current_bid|add:'1' }}" step="any"
                             required>
-                        <button type="submit" class="btn btn-primary">Submit Bid</button>
+                        <button type="submit" class="btn btn-primary btn-sm">Submit Bid</button>
                     </form>
                     {% endif %}
                     </p>
@@ -113,8 +113,10 @@
                             <div class="card-body">
                                 <h6 class="card-subtitle mb-2 text-muted">{{ comment.author.username }}</h6>
                                 <p class="card-text">{{ comment.body }}</p>
-                                <p class="text-muted"><small>Posted on: {{ comment.created_on|date:"F d, Y H:i"
-                                        }}</small></p>
+                                {% if comment.bid_amount %}
+                                <p class="bid-amount">Bid: €{{ comment.bid_amount|floatformat:"2" }}</p>
+                                {% endif %}
+                                <small>Posted on: {{ comment.created_on|date:"F d, Y H:i" }}</small></p>
                             </div>
                         </div>
                     </div>

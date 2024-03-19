@@ -124,7 +124,8 @@ def place_bid(request, listing_id):
         listing.save()
         
         # Optionally, create a comment noting the bid
-        comment_text = f"Bid placed: {bid_amount}"
+        formatted_bid_amount = "€ {:,.2f}".format(bid_amount)
+        comment_text = f"Bid placed: {formatted_bid_amount}"
         Comment.objects.create(listing=listing, author=request.user, body=comment_text)
         
         # Redirect to the listing detail view or another success page
