@@ -9,18 +9,18 @@
         <div class="bg-dark col-md-6">
             <div id="watchImagesCarousel" class="carousel slide" data-bs-ride="carousel">
 
-                <div class="carousel-inner">
+                <div class="carousel-inner p-4">
                     <!-- Add images dynamically here -->
                     {% if listing.images.all %}
                     {% for image in listing.images.all %}
                     <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                        <img src="{{ image.image.url }}" class="d-block w-100" alt="Watch Image">
+                        <img src="{{ image.image.url }}" class="d-block card-img-top" alt="Watch Image">
                     </div>
                     {% endfor %}
                     {% else %}
                     <!-- Show placeholder image if no images are available -->
                     <div class="carousel-item active">
-                        <img src="{% static 'img/placeholder-watch.webp' %}" class="d-block w-100"
+                        <img src="{% static 'img/placeholder-watch.webp' %}" class="d-block card-img-top"
                             alt="Placeholder Image">
                     </div>
                     {% endif %}
@@ -48,8 +48,8 @@
                         <p class="card-text">Date Joined: {{ listing.author.date_joined.date }}</p>
                         {% if user.is_authenticated and listing.author == user %}
                         <div>
-                            <a href="{% url 'edit-listing' slug=listing.slug %}" class="btn btn-primary">Edit</a>
-                            <form action="{% url 'listing-delete' listing.id %}" method="post" style="display: inline;">
+                            <a href="{% url 'sell:edit-listing' slug=listing.slug %}" class="btn btn-primary">Edit</a>
+                            <form action="{% url 'sell:listing-delete' listing.id %}" method="post" style="display: inline;">
                                 {% csrf_token %}
                                 <input type="hidden" name="next" value="{{ request.path }}">
                                 <button type="submit" class="btn btn-danger"

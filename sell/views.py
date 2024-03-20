@@ -26,7 +26,7 @@ def create_listing(request, slug=None):
                 ListingImage.objects.create(listing=listing, image=image_file)
 
         messages.success(request, 'Listing saved successfully!')
-        return redirect('watch_detail', slug=listing.slug)
+        return redirect(reverse('buy:watch_detail', args=[listing.slug]))
 
     return render(request, 'sell/create_listing.html', {'form': form, 'listing': listing})
 
@@ -42,11 +42,11 @@ def delete_listing(request, listing_id):
     
     if listing.author != request.user:
         messages.error(request, "You do not have permission to delete this listing.")
-        return redirect('watch_detail', listing.slug)
+        return redirect('buy:watch_detail', listing.slug)
     
     if request.method == 'POST':
         listing.delete()
         messages.success(request, "Your listing was successfully deleted.")
-        return redirect('my-listings')
+        return redirect('sell:my-listings')
     else:
-        return redirect('watch_detail', listing.slug)
+        return redirect('buy:watch_detail', listing.slug)
