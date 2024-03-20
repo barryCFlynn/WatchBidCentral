@@ -1,13 +1,30 @@
 /* This is a style sheet for CSS to be added to the template */
 .custom-alert {
-    color: #006400; /* Darker green for the font */
-    background-color: #90EE90; /* Lighter green for the background */
-    border-color: #90EE90; /* Lighter green border to match the background */
-    border-radius: .25rem; /* Rounded edges */
+    color: #006400;
+    /* Darker green for the font */
+    background-color: #90EE90;
+    /* Lighter green for the background */
+    border-color: #90EE90;
+    /* Lighter green border to match the background */
+    border-radius: .25rem;
+    /* Rounded edges */
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1050; /* Ensures the alert is above most other content */
+    z-index: 1050;
+    /* Ensures the alert is above most other content */
     width: auto;
     text-align: center;
 }
+
+.like-display {
+    top: 0.5rem;
+    right: 0.5rem;
+    color: white;
+    background-color: #343a40;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+}
+
+/* style="max-height: 150px; max-width: 100px; display: block; margin: 0 auto;" */
+/* style="max-height: 300px; width: auto; display: block; margin: 0 auto;" */

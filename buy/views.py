@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render, redirect, reverse
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.views.generic import ListView
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -45,30 +45,6 @@ def watch_detail(request, slug):
         'comments': comments,  # Pass the ordered comments to the template
     })
 
-
-# def watch_detail(request, slug):
-#     """
-#     Display an individual :model:`buy.Listing`.
-
-#     **Context**
-
-#     ``watch``
-#         An instance of :model:`buy.Listing`.
-
-#     **Template:**
-
-#     :template:`buy/watch_detail.html`
-#     """
-#     listing = get_object_or_404(Listing, slug=slug)
-#     return render(request, 'buy/watch_detail.html', {'listing': listing})
-
-# def like_carousel(request):
-#     # Fetch the top 7 most liked listings
-#     like_listings = Listing.objects.order_by('-likes')[:7]
-#     context = {
-#         'like_listings': like_listings,
-#     }
-#     return render(request, 'index.html', context)
 
 def like_listing(request, listing_id):
     # Ensure this action only happens for authenticated users
@@ -129,7 +105,7 @@ def place_bid(request, listing_id):
         Comment.objects.create(listing=listing, author=request.user, body=comment_text)
         
         # Redirect to the listing detail view or another success page
-        return redirect('watch_detail', slug=listing.slug)
+        return redirect('buy:watch_detail', slug=listing.slug)
     else:
         # Handle the case where the bid is not higher than the current bid
         return HttpResponse("Bid must be higher than the current bid.", status=400)

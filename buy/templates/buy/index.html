@@ -5,25 +5,24 @@
 
 <!-- index.html content starts here -->
 <!-- like_listings_carousel.html -->
-<!-- TODO  carousel is not call the data, will come back to it -->
 <div class="bg-dark py-5">
-    <div id="topListingsCarousel" class="container carousel slide px-4 px-lg-5 mt-5 bg-dark" data-bs-ride="carousel">
+    <div id="topListingsCarousel" class="container carousel slide px-4 px-lg-5 mt-5 bg-dark" >
         <div class="carousel-inner">
             {% for listing in like_listings %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
                 <div class="col mb-5">
                     <div class="card h-25">
                         <!-- Likes display -->
-                        <div id="like-display-{{ listing.id }}" class="like-display position-absolute" style="top: 0.5rem; right: 0.5rem; color: white; background-color: #343a40; padding: 0.375rem 0.75rem; border-radius: 0.25rem;">
+                        <div id="like-display-{{ listing.id }}" class="like-display position-absolute">
                             <i class="bi bi-heart"></i> <span id="likes-count-{{ listing.id }}">{{ listing.likes }}</span>
                         </div>
                         <!-- Product image wrapped with an anchor tag for clickable images -->
-                        <a href="{% url 'watch_detail' listing.slug %}">
+                        <a href="{% url 'buy:watch_detail' listing.slug %}">
                             {% with listing.images.first as image %}
                                 {% if image %}
-                                    <img class="card-img-top" src="{{ image.image.url }}" alt="{{ listing.title }}" style="max-height: 150px; max-width: 100px; display: block; margin: 0 auto;">
+                                    <img class="card-img-top " src="{{ image.image.url }}" alt="{{ listing.title }}">
                                 {% else %}
-                                    <img class="card-img-top" src="{% static 'img/placeholder-watch.webp' %}" alt="placeholder image" style="max-height: 300px; width: auto; display: block; margin: 0 auto;">
+                                    <img class="card-img-top" src="{% static 'img/placeholder-watch.webp' %}" alt="placeholder image">
                                 {% endif %}
                             {% endwith %}
                         </a>
@@ -89,7 +88,7 @@
                 <!-- Product actions-->
                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                     <div class="text-center">
-                        <a class="btn btn-outline-dark mt-auto" href="{% url 'watch_detail' listing.slug %}">View Listing</a>
+                        <a class="btn btn-outline-dark mt-auto" href="{% url 'buy:watch_detail' listing.slug %}">View Listing</a>
                     </div>
                 </div>
             </div>

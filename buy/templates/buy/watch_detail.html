@@ -73,7 +73,7 @@
                     <p class="card-text">Curent Bid: € {{ listing.current_bid }}
                         {% if user.is_authenticated and user != listing.author %}
                         <button id="show-bid-form" class="btn btn-secondary btn-sm">Place a Bid</button>
-                    <form id="bid-form" method="post" action="{% url 'place_bid' listing.id %}" style="display:none;">
+                    <form id="bid-form" method="post" action="{% url 'buy:place_bid' listing.id %}" style="display:none;">
                         {% csrf_token %}
                         <input type="number" name="bid_amount" min="{{ listing.current_bid|add:'1' }}" step="any"
                             required>
@@ -95,7 +95,7 @@
                     <h5 class="card-title">Comments</h5>
                     <!-- Add comment form here -->
                     {% if request.user.is_authenticated %}
-                    <form method="post" action="{% url 'add_comment_to_listing' slug=listing.slug %}">
+                    <form method="post" action="{% url 'buy:add_comment_to_listing' slug=listing.slug %}">
                         {% csrf_token %}
                         <div class="mb-3">
                             <label for="comment" class="form-label">Add a Comment:</label>

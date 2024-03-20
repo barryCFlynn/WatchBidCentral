@@ -57,15 +57,15 @@ the adverts should have a timer on them to expire to allow for bids to occur, ti
 ### implementations
 
 	things left:
-	bid timer count down - could have
-	shop link filtering - should have
+	bid timer count down - could have removed
+	shop link filtering - should have added my listings
 	like count icon on watch detail page - must have
-	nested comments - could have
+	nested comments - could have removed
 	about page - must have
 	create listing form - must have (logged in users) - done
 	automated testing - could have
 	readme - must have
-	like model - to track who likes and prevent mutiple likes from one user
+	like model - to track who likes and prevent mutiple likes from one user - removed
 	
 
 	will try to do:
