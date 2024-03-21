@@ -75,5 +75,3 @@ class BuyViewTestCase(TestCase):
         
         # Ensure the response is a redirection to the watch detail view of the listing
         self.assertRedirects(response, reverse('buy:watch_detail', kwargs={'slug': self.listing.slug}))
-
-    

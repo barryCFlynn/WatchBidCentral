@@ -22,6 +22,17 @@ class ListingsList(ListView):
         context['like_listings'] = Listing.objects.order_by('-likes')[:7]
         return context
 
+class TopLikedListingsView(ListView):
+    model = Listing
+    template_name = "buy/top_liked_list.html"
+    context_object_name = 'listing_list'  # You can customize this to match your template context
+
+    def get_queryset(self):
+        """Override to return listings ordered by likes."""
+        return Listing.objects.filter(status=1).order_by('-likes')
+        return context
+
+
 def watch_detail(request, slug):
     """
     Display an individual :model:`buy.Listing` and its comments ordered by most recent.
