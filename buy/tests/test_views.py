@@ -5,7 +5,7 @@ from django.contrib.messages import get_messages
 from buy.models import Listing, Comment
 from decimal import Decimal
 
-class ViewTestCase(TestCase):
+class BuyViewTestCase(TestCase):
     def setUp(self):
         # Create test user
         self.user = User.objects.create_user(username='testuser', password='12345')
