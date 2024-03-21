@@ -29,11 +29,11 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     "8000-barrycflynn-watchbidcen-wl2gcpiqcxa.ws-eu110.gitpod.io",
-    ".herokuapp.com"
+    ".herokuapp.com",
 ]
 
 
@@ -58,7 +58,6 @@ INSTALLED_APPS = [
     'cloudinary',
     'buy',
     'sell',
-    'about',
 ]
 
 SITE_ID = 1
