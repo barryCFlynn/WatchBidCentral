@@ -19,12 +19,10 @@ from django.urls import path, include
 from django.contrib.flatpages import views as flat_views
 
 urlpatterns = [
-    # TODO Temporary test URL for flatpage, remove if not used
-    # path('about-us/', flat_views.flatpage, {'url': '/about-us/'}, name='about-url'),
-    # path('about-us/', include('django.contrib.flatpages.urls')),
     path("accounts/", include('allauth.urls')),
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path('', include(('buy.urls', 'buy'), namespace='buy')),
     path('sell/', include(('sell.urls', 'sell'), namespace='sell')),
+    path('', include('django.contrib.flatpages.urls')),
 ]
