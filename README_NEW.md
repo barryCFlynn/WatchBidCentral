@@ -393,7 +393,13 @@ The files are located in each app, in a folder called "Tests". to run the test r
 
 Python linting was carried out with https://pep8ci.herokuapp.com/.
 
-There were no warnings left in the production code apart from the ‘line too long’ errors on the boilerplate Django code in ‘settings.py’.
+There were no warnings left in the production code apart from the ‘line too long’ on a few lines.
+
+### JavaScript Linting
+
+All JavaScript files were tested with [JSHint](https://jshint.com/). There were no significant warnings
+
+
 
 
 ## Manual Testing
