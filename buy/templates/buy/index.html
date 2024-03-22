@@ -13,8 +13,8 @@
                 <div class="col mb-5">
                     <div class="card h-25">
                         <!-- Likes display -->
-                        <div id="like-display-{{ listing.id }}" class="like-display position-absolute">
-                            <i class="bi bi-heart"></i> <span id="likes-count-{{ listing.id }}">{{ listing.likes }}</span>
+                        <div class="like-display position-absolute" data-listing-id="{{ listing.id }}">
+                            <i class="bi bi-heart"></i> <span class="likes-count" data-listing-id="{{ listing.id }}">{{ listing.likes }}</span>
                         </div>
                         <!-- Product image wrapped with an anchor tag for clickable images -->
                         <a href="{% url 'buy:watch_detail' listing.slug %}">
@@ -59,7 +59,7 @@
         <div class="col mb-5">
             <div class="card h-100">
                 <!-- Likes Button-->
-                <button id="like-button-{{ listing.id }}" class="like-btn btn btn-dark position-absolute" data-listing-id="{{ listing.id }}" style="top: 0.5rem; right: 0.5rem">
+                <button id="like-button-{{ listing.id }}" class="like-btn btn btn-dark position-absolute like-display" data-listing-id="{{ listing.id }}">
                     <i class="bi bi-heart"></i> <span id="likes-count-{{ listing.id }}">{{ listing.likes }}</span>
                 </button>
                 <!-- Product image-->

@@ -12,12 +12,11 @@ Embracing the legacy and innovation of the watchmaking tradition, WatchBidCentra
 
 </center>
 
-
 Developer: [Barry Flynn](https://github.com/barryCFlynn/) <br>
 [Live webpage](https://watch-bid-central-95b83adfb641.herokuapp.com/)<br>
 [Project Repository](https://github.com/barryCFlynn/WatchBidCentral)<br>
 
-
+## Badges
 ![GitHub Badge](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=for-the-badge)
 ![Gitpod Badge](https://img.shields.io/badge/Gitpod-FFAE33?logo=gitpod&logoColor=fff&style=for-the-badge)
 ![Git Badge](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff&style=for-the-badge)
@@ -28,7 +27,6 @@ Developer: [Barry Flynn](https://github.com/barryCFlynn/) <br>
 ![CSS3 Badge](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=for-the-badge)
 ![JSS Badge](https://img.shields.io/badge/JSS-F7DF1E?logo=jss&logoColor=000&style=for-the-badge)
 ![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=for-the-badge)
-![Markdown Badge](https://img.shields.io/badge/Markdown-000?logo=markdown&logoColor=fff&style=for-the-badge)
 
 ![Bootstrap Badge](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=fff&style=for-the-badge)
 ![Django Badge](https://img.shields.io/badge/Django-092E20?logo=django&logoColor=fff&style=for-the-badge)
@@ -37,68 +35,47 @@ Developer: [Barry Flynn](https://github.com/barryCFlynn/) <br>
 
 ## Table of Content
 
-- [Project Goals](#project-goals)
-    + [User Goals](#user-goals)
-    + [Site Owner Goals](#site-owner-goals)
-- [User Experience](#user-experience)
-    + [Target Audience](#target-audience)
-    + [User Requirements and Expectations](#user-requirements-and-expectations)
-    + [User Stories](#user-stories)
-      - [Epic 1: User Experience (Visitor)](#epic-1--user-experience--visitor-)
-      - [Epic 2: User Engagement and Interaction (Registered User)](#epic-2--user-engagement-and-interaction--registered-user-)
-      - [Epic 3: Administration and Content Management (Admin/Content Moderator)](#epic-3--administration-and-content-management--admin-content-moderator-)
-- [Database](#database)
-    + [Blog Application Database Schema](#blog-application-database-schema)
-      - [CultureCategory Table](#culturecategory-table)
-      - [UserProfile Table](#userprofile-table)
-      - [User Table](#user-table)
-      - [Post Table](#post-table)
-      - [Comment Table](#comment-table)
-- [Design](#design)
-    + [Design Choices](#design-choices)
-    + [Color](#color)
-    + [Fonts](#fonts)
-    + [Structure](#structure)
-      - [Before User logs in:](#before-user-logs-in-)
-      - [After User logged in:](#after-user-logged-in-)
-      - [Profile Navigation:](#profile-navigation-)
-    + [Wireframes](#wireframes)
-- [Technologies Used](#technologies-used)
-    + [Languages](#languages)
-    + [Frameworks](#frameworks)
-    + [Database](#database-1)
-    + [Media management platform](#media-management-platform)
-    + [Tools](#tools)
-    + [Supporting Libraries and Packages](#supporting-libraries-and-packages)
-- [Methodology](#methodology)
-    + [Agile Project Management with GitHub Projects](#agile-project-management-with-github-projects)
-    + [User Stories as GitHub Issues](#user-stories-as-github-issues)
-    + [Bug Tracking for Seamless Development](#bug-tracking-for-seamless-development)
-    + [Iterative Development Approach](#iterative-development-approach)
-    + [Future Backlog and Progress](#future-backlog-and-progress)
-- [Features](#features)
-    + [Landing Page:](#landing-page-)
-    + [Other Pages:](#other-pages-)
-    + [User Account Management:](#user-account-management-)
-    + [Navigation:](#navigation-)
-    + [Future Features](#future-features)
-- [Testing](#testing)
-- [Bugs](#bugs)
-    + [Known bugs](#known-bugs)
-    + [Fixed bugs](#fixed-bugs)
-- [Deployment](#deployment)
-    + [App Deployment](#app-deployment)
-    + [Cloudinary](#cloudinary)
-    + [Version Control](#version-control)
-    + [Forking the Repository:](#forking-the-repository-)
-    + [Clone of the Repository:](#clone-of-the-repository-)
-- [Credits](#credits)
-    + [Media](#media)
-    + [Django Documentation:](#django-documentation-)
-    + [Bootstrap docs:](#bootstrap-docs-)
-    + [Tutorials and YouTube channels:](#tutorials-and-youtube-channels-)
-    + [Content](#content)
-- [Acknowledgments](#acknowledgments)
+# Table of Contents
+
+1. [Project Goals](#project-goals)
+    - [User Goals](#user-goals)
+    - [Site Owner Goals](#site-owner-goals)
+2. [User Experience (UX)](#user-experience)
+    - [Target Audience](#target-audience)
+    - [User Requirements and Expectations](#user-requirements-and-expectations)
+    - [User Stories](#user-stories)
+3. [Database](#database)
+    - [Database Schema Summary](#database-schema-summary)
+4. [Design](#design)
+    - [Color](#color)
+5. [Technologies Used](#technologies-used)
+    - [Languages](#languages)
+    - [Frameworks](#frameworks)
+    - [Tools](#tools)
+    - [Supporting Libraries and Packages](#supporting-libraries-and-packages)
+6. [Methodology](#methodology)
+7. [Features](#features)
+    - [Login Landing Page](#login-landing-page)
+    - [About Us](#about-us)
+    - [Create Listing](#create-listing)
+    - [Liked Listings](#liked-listings)
+    - [My Listings](#my-listings)
+    - [Future Features](#future-features)
+8. [Testing](#testing)
+    - [Automated Testing](#automated-testing)
+    - [Manual Testing](#manual-testing)
+9. [Bugs](#bugs)
+    - [Known Bugs](#known-bugs)
+    - [Fixed Bugs](#fixed-bugs)
+10. [Deployment](#deployment)
+    - [App Deployment](#app-deployment)
+    - [Version Control](#version-control)
+11. [Credits](#credits)
+    - [Django Documentation](#django-documentation)
+    - [Bootstrap Docs](#bootstrap-docs)
+    - [Media](#media)
+    - [Content](#content)
+12. [Acknowledgments](#acknowledgments)
 
 ---
 
@@ -389,19 +366,6 @@ The files are located in each app, in a folder called "Tests". to run the test r
 
 <img src="assets\img\README_images\django test.jpg" width="550" height="150">
 
-### Python Linting
-
-Python linting was carried out with https://pep8ci.herokuapp.com/.
-
-There were no warnings left in the production code apart from the ‘line too long’ on a few lines.
-
-### JavaScript Linting
-
-All JavaScript files were tested with [JSHint](https://jshint.com/). There were no significant warnings
-
-
-
-
 ## Manual Testing
 
 - The website was tested on Google Chrome and Microsoft Edge.
@@ -422,25 +386,14 @@ All JavaScript files were tested with [JSHint](https://jshint.com/). There were 
 
 - Desktop
 
-    <img src="assets\img\README_images\lighthouse.jpg" width="550" height="150">
+    <img src="assets\img\README_images\lighthouse.jpg">
 
 - Mobile
 
-    <img src="assets\img\README_images\lighthouse mobile.jpg" width="550" height="150">
+    <img src="assets\img\README_images\lighthouse mobile.jpg">
 </details>
-
-
-
-<details>
-<summary>W3C Markup Validtor - PASS</summary>
-    <img src="assets\images\README-images\html_validate.png" alt="Description">        
-</details>
-
-<details>
-<summary>W3C CSS Validator - PASS</summary>
-<img src="assets\images\README-images\css_validate.png" alt="Description">        
-</details>
-
+W3C Markup Validtor - PASS
+W3C CSS Validator - PASS
 <detailS>
 <summary>Responsive - PASS</summary>
 
@@ -474,25 +427,32 @@ The bug description section have been linked with the bug issues in my documenta
 
 ### Known bugs ❌ 
 
-| Bug Description | Bug Issue Link |
-| --- | --- |
-| Masthead image not scaling properly See screenshot here: <details><summary>Screenshot showing bug result</summary>![Result](docs/test.md/test_image_max_height.png)</details> | More information &rarr; [#46](https://github.com/DebbieBergstrom/Culture-Club/issues/46) |
-| No linebreak if User Name too long <details><summary>Screenshot showing bug</summary>![Result](docs/test.md/test_chars_overflow_userprofile.png)</details> | More information &rarr; [#47](https://github.com/DebbieBergstrom/Culture-Club/issues/47) |
+
+<details>
+<summary>Likes Button no longer working:</summary>
+
+- Error
+
+    <img src="assets\img\README_images\likes bug.jpg">
+    <img src="assets\img\README_images\likes bug 2.jpg" width="600" height="150">
+  At some point in Development it stoped working and ran out of time to fix it.
+
+</details>
 
 
 ### Fixed bugs ✅
 
-| Bug Description | Bug Issue Link |
-| --- | --- |
-| Placeholder image doesn't show in Profile | More information &rarr; [#39](https://github.com/DebbieBergstrom/Culture-Club/issues/39) |
-| Post default image is not displayed | More information &rarr; [#41](https://github.com/DebbieBergstrom/Culture-Club/issues/41) |
-| Wrongfully landing page direction | More information &rarr; [#36](https://github.com/DebbieBergstrom/Culture-Club/issues/36) |
-| Index file does not render | More information &rarr; [#34](https://github.com/DebbieBergstrom/Culture-Club/issues/34) |
-| Author link in post detail not clickable | More information &rarr; [#38](https://github.com/DebbieBergstrom/Culture-Club/issues/38) |
-| 'Forgot your password' link can't be removed | More information &rarr; [#44](https://github.com/DebbieBergstrom/Culture-Club/issues/44) |
-| Summernote field overflows parent container | More information &rarr; [#45](https://github.com/DebbieBergstrom/Culture-Club/issues/45) |
+### Django Flatpages, 
+- When implementing Django's flatpages for static content, like an "About" page, you faced significant setup challenges. Initially, you attempted to bypass URL pattern requirements with middleware, but issues arose. Switching strategies, you directly added a URL pattern and set APPEND_SLASH = True for troubleshooting, also configuring flatpages admin for various environments (Gitpod, Heroku, localhost).
 
+- Persistent difficulties almost led to abandoning flatpages. However, a fresh start—removing all initial setups and reconfiguring from scratch—resolved the issues. This experience highlighted the effectiveness of resetting configurations and the value of methodical troubleshooting in successfully integrating Django features.
 
+### Listing images not loading on watch_detail page
+- Fixed, the issue was the iteration was incorrect
+	
+
+### Price showing as "{{ listing.price }}" instead of integer
+- Fixed by removing the if statment to show either the price of the bid, these should be shown seperately
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 
@@ -611,48 +571,20 @@ To manage version control and push code to the main repository on GitHub using G
 The official Django documentation with guidance on models, forms, templates, and various aspects of Django development.
 
 - [Models](https://docs.djangoproject.com/en/4.2/topics/db/models/)
-- [Validators](https://docs.djangoproject.com/en/5.0/ref/forms/validation/)
 - [DeleteView](https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-editing/)
-- [Mixins & Class based Views](https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-editing/)
+generic-editing/)
 - [Authentication System](https://docs.djangoproject.com/en/3.2/topics/auth/default/)
 - [URL patterns](https://docs.djangoproject.com/en/5.0/topics/http/urls/)
-- [Form Widgets](https://docs.djangoproject.com/en/5.0/ref/forms/widgets/)
 - [Messages](https://docs.djangoproject.com/en/5.0/ref/contrib/messages/)
 - [Automated testing](https://docs.djangoproject.com/en/5.0/topics/testing/overview/)
 
 ### Bootstrap docs:
 - [Increase knowledge of Bootstrap framework](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
-
-### W3 Schools:
-- [Overrite Bootstraps css variables](https://www.w3schools.com/css/css_important.asp)
-- [Refresh knowledge of JS addEventListener](https://www.w3schools.com/jsref/met_element_addeventlistener.asp)
-- [Explaining truncate word function](https://www.w3schools.com/django/ref_filters_truncatewords.php)
-
-### Geeksforgeeks: 
-- [Using Crispy Form](https://www.geeksforgeeks.org/styling-django-forms-with-django-crispy-forms/)
-
-### StackOverflow: 
-- [About Django Messages](https://stackoverflow.com/questions/28723266/django-display-message-after-post-form-submit)
-- [About Django Sort by Filter](https://stackoverflow.com/questions/72117712/django-filter-by-category)
-- [About Django Form Widgets](https://stackoverflow.com/questions/68736684/modify-django-model-form-field-with-widget)
-
-### Tutorials and YouTube channels:
-- [How to Create User Profile](https://www.youtube.com/watch?v=FdVuKt_iuSI)
-
-### Other sites:
-- [Styling Crispy forms](https://blog.appseed.us/django-forms-styling-with-bootstrap/)
-- [Organize Imports](https://peps.python.org/pep-0008/)
-- [Generate Slugs](https://www.kodnito.com/posts/slugify-urls-django/)
-- [How to override default django templates](https://www.makeuseof.com/override-default-templates-django-allauth/)
-- [Automated testing tutorial](https://www.youtube.com/watch?v=6I_haJimhPY)
-
-
-- Code Institute, Module 4 & Django Coding Walkthrough material.
+- [Bootstrap Template used](https://startbootstrap.com/template/shop-homepage)
 
 ### Media
-- [Favicon Generator](https://favicon.io/) to create the blue 'C' favicon in the browser tab.
-- [Pexels Free Images](https://www.pexels.com/sv-se/) to find some user profile mockup images.
-- [Freepik Free Images](https://www.freepik.com/free-photos-vectors/user-profile) to find user profile symbols and default images.
+
+- All watch images were taken from a number of sites, too many to mention.
 
 ### Content
 - Content for the webpage and readme-file was written together with [ChatGPT](https://chat.openai.com/)
@@ -665,12 +597,7 @@ The official Django documentation with guidance on models, forms, templates, and
 # Acknowledgments
  I'd like to give recognition to the ones who have supported me in creating this project:
 
-* [Lauren_Nicole](https://github.com/CluelessBiker), my Code Institute Mentor. I cannot thank her enough for her invaluable guidance and assistance. 
-
-* [Sandra B](https://github.com/SandraBergstrom) and [Kim B](https://github.com/KimBergstroem), who are both great critics and support pillars.
-
-* Code Institute and their helpful staff, especially within our great Slack community.
-
+My mentor Mitko Bachvarov for his help in guiding me through this project
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 

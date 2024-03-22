@@ -29,7 +29,7 @@
                     <div class="text-center">
                         <!-- Product name-->
                         <h5 class="fw-bolder">{{ listing.title }}</h5>
-                        <h7 class="">Seller: {{ listing.author.first_name }} {{ listing.author.last_name }}</h7>
+                        <h6>Seller: {{ listing.author.first_name }} {{ listing.author.last_name }}</h7>
                         <!-- Product price if statement to show "Price" if "current_bid" is null-->
                         <hr>
                         {% if listing.current_bid %}
