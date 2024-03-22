@@ -67,26 +67,10 @@ def add_comment_to_listing(request, slug):
         comment = Comment(
             listing=listing, author=request.user, body=comment_body)
         comment.save()
-        return redirect('watch_detail', slug=slug)
+        return redirect('buy:watch_detail', slug=slug)
     else:
         # Optionally handle the case for GET request or show an error
-        return redirect('watch_detail', slug=listing.slug)
-
-
-@login_required
-def delete_comment(request, comment_id):
-    comment = get_object_or_404(Comment, id=comment_id)
-
-    if request.user == comment.author or request.user.is_superuser:
-        # Store listing slug to redirect back to listing detail
-        listing_slug = comment.listing.slug
-        comment.delete()
-        messages.success(request, "Comment deleted successfully.")
-        return redirect('watch_detail', slug=listing_slug)
-    else:
-        messages.error(
-            request, "You don't have permission to delete this comment.")
-        return redirect('watch_detail', slug=comment.listing.slug)
+        return redirect('buy:watch_detail', slug=listing.slug)
 
 
 @login_required
