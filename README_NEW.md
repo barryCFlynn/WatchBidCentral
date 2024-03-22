@@ -100,32 +100,30 @@ Developer: [Barry Flynn](https://github.com/barryCFlynn/) <br>
     + [Content](#content)
 - [Acknowledgments](#acknowledgments)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-
 ---
 
 # Project Goals 
 
-Culture Club is a Django web application that serves as a vibrant community platform for cultural enthusiasts to share and explore diverse cultural content including movies, books, podcasts, and music. The key objectives of the project include:
+WatchBidCentral is a Django-based web application dedicated to watch enthusiasts and collectors, offering a sophisticated platform for the buying and selling of luxury watches. The main goals of the project include:
 
-- To provide a user-friendly interface where users can easily share and discover cultural experiences.
-- To foster a community of cultural exchange, where users can engage in discussions, express their opinions, and connect with like-minded individuals.
-- To offer a personal space for users to curate and display their cultural interests and recommendations.
-- To ensure secure and straightforward user registration, authentication, and profile management.
-- To allow users to actively participate by creating content, and liking and commenting on posts.
+To create a secure and user-friendly marketplace where users can list their watches for sale and participate in bidding on a wide range of luxury timepieces.
+To foster a community of watch enthusiasts who can share their passion, knowledge, and experiences related to various brands and models.
+To implement a transparent and trustworthy verification process ensuring the authenticity and quality of the watches listed on the platform.
+To provide comprehensive user profiles that allow sellers to showcase their collections and buyers to express their preferences and watch interests.
+To enable a seamless and intuitive user experience from listing watches to placing bids, with a focus on high-quality images and detailed descriptions.
 
 ### User Goals
 
-- To discover and engage with content that aligns with their cultural interests.
-- To find a platform that allows them to express their own cultural narratives and experiences.
-- To join a community that values and fosters cultural diversity and exchange.
+- To discover a wide selection of luxury watches from reputable sellers and verified listings.
+- To find a specialized platform that caters exclusively to the needs and interests of watch collectors and enthusiasts.
+- To safely buy and sell luxury watches within a community that values authenticity, quality, and the finer details of horology.
+- To connect with other users, share insights, and gain knowledge about different watches and their historical significance.
 
 ### Site Owner Goals
 
-- To build a community-driven platform that encourages user interaction and content creation.
-- To maintain a high standard of user experience with seamless navigation and responsive design.
-- To ensure the website is a safe and welcoming space for all users to share their cultural passions.
+- To establish WatchBidCentral as a premier online destination for luxury watch transactions, recognized for its commitment to quality, authenticity, and community engagement.
+- To create a sustainable business model that attracts a global audience of watch lovers and collectors, providing them with a reliable platform for their buying and selling needs.
+- To continuously improve the platform based on user feedback and technological advancements, ensuring a state-of-the-art experience for all community members.
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 
@@ -135,63 +133,42 @@ Culture Club is a Django web application that serves as a vibrant community plat
 
 ### Target Audience
 
-Culture Club is designed for the following target audience:
+WatchBidCentral is tailored for the following target audience:
 
-- Individuals passionate about various cultural domains who are looking for a space to explore and share content.
-- Users seeking a platform to keep track of their cultural experiences and get recommendations from a like-minded community.
-- Cultural content creators looking for an outlet to publish their work and engage with an audience.
+- Watch enthusiasts and collectors seeking a dedicated platform to buy and sell luxury timepieces.
+- Individuals interested in learning about horology and connecting with a community that shares their passion for high-quality watches.
+- Sellers looking for a trustworthy marketplace to list their luxury watches and reach a global audience of potential buyers.
+- Buyers in search of a secure and user-friendly environment to discover authentic luxury watches from reputable sellers.
+
 
 ### User Requirements and Expectations
 
-When using Culture Club, users can expect the following features and characteristics to fulfill their needs:
+When using WatchBidCentral, users can expect the following features and characteristics to fulfill their needs:
 
-- An aesthetically pleasing and intuitive interface that provides ease of navigation and content discovery.
-- A secure registration and login process, ensuring user data protection and privacy.
-- Interactive features such as the ability to like, comment, and create posts that facilitate community engagement.
-- A personalized user profile where they can showcase their favorite cultural elements and manage their contributions.
-- Access to a diverse range of cultural content and the opportunity to contribute their own insights and reviews.
+- A visually appealing and easy-to-navigate interface that enhances the experience of buying and selling watches.
+- A secure registration and login process, safeguarding user data and transactions.
+- Interactive features such as the ability to place bids, create listings, and engage with other users through comments.
+- A personalized user profile where sellers can showcase their watches and buyers can manage their bids and watchlist.
+- Access to a curated selection of luxury watches, with detailed information and images to ensure authenticity and quality.
+
 
 
 ### User Stories
 
-User stories and tasks were put int o four 'epics' and are organized into four distinct sprints (milestones) to establish a well-defined work structure. You can access the details of these milestones by clicking [here](https://github.com/DebbieBergstrom/Culture-Club/milestones?state=closed), which will take you to the milestone overview.
+User stories and tasks Grouped below.
 
-### Epic 1: User Authentication & Profile Management
-This epic focuses on user account management, including registration, login/logout, and personal profile customization.
-- [User Account Registration (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/2)
-- [Easy Login from Landing Page (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/20)
-- [Log out of User account (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/3)
-- [Create, Update & Delete User Profile (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/4)
-- [Favorite Lists in Personal Bio (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/5)
-- [Password Reset (WON'T HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/43)
+- [As a Site Admin, I can create, edit, and delete advertisements - complete](https://github.com/barryCFlynn/WatchBidCentral/issues/1)
+- [As a Seller, I can place offers on advertisements and manage my own listings - Partially complete](https://github.com/barryCFlynn/WatchBidCentral/issues/2)
+- [As a Buyer, I can bid on advertisements, leave comments, and reply to comments - complete](https://github.com/barryCFlynn/WatchBidCentral/issues/3)
+- [Paginated list of posts - complete](https://github.com/barryCFlynn/WatchBidCentral/issues/4)
+- [Carousel of most liked listings - Partially complete](https://github.com/barryCFlynn/WatchBidCentral/issues/5)
+- [Open a Listed Item - complete](https://github.com/barryCFlynn/WatchBidCentral/issues/6)
+- [Comments and Comments on comments - Partially complete](https://github.com/barryCFlynn/WatchBidCentral/issues/7)
+- [View Notifications - Partially complete](https://github.com/barryCFlynn/WatchBidCentral/issues/8)
+- [About Page - complete](https://github.com/barryCFlynn/WatchBidCentral/issues/9)
+- [Account Registration - complete](https://github.com/barryCFlynn/WatchBidCentral/issues/10)
+- [Comment on a Listing - complete](https://github.com/barryCFlynn/WatchBidCentral/issues/11)
 
-### Epic 2: Blog Interaction & Content Management
-This epic deals with the core functionalities of the blog, such as creating, reading, editing, and deleting posts, as well as interacting with posts through comments and likes.
-- [User Create, Edit & Delete Blog Posts (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/7)
-- [Comment Blog Posts (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/8)
-- [Like/ Unlike Blog Posts (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/9)
-- [View Other Users' Profiles (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/10)
-- [See Post Overview (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/11)
-- [Read Full Post Detail (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/12)
-- [Bookmark Blog Posts (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/29)
-- [Follow Other Users (WON'T HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/30)
-- [Receive Validating Messages (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/37)
-
-### Epic 3: Administration & Analytics
-This epic encompasses administrative control over the site, including user account management and content moderation, as well as tracking user engagement.
-- [Admin - Full Control Over User Accounts (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/13)
-- [Admin - Review and Edit User-Submitted Blog Posts (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/14)
-- [Admin - Manage and Categorize Blog Posts (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/15)
-- [Admin - Track User Engagement and Analytics (WON'T HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/16)
-
-### Epic 4: User Experience & Accessibility
-This epic is focused on the overall user experience on the site, such as the appearance of the homepage, ease of navigation, and accessibility of information.
-- [Visually Appealing Landing Page (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/17)
-- [Navigate to About Us (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/18)
-- [Navigate to Join the Club Section (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/19)
-- [Navigate through a well designed website (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/33)
-- [Site pagination for easy navigation (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/32)
-- [Receive Page Error Messages (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/42)
 
 <br>
 
@@ -204,34 +181,29 @@ When creating the database structure schema for this project, I utilized the [db
 
 <center> 
 
-![Database Schema image](/docs/readme/database_schema.png) 
+ <img src="assets/img/README_images/database.jpg" alt="Description" width= 600px> 
 
 </center>
 
 ## Database Schema Summary
 
-### `User` Table
+### `Django User Auth` Table
 - Represents the basic user information according to Django's built-in User model.
 - Fields: `username`, `email`, `password`.
 
-### `UserProfile` Table
+### `Listing` Table
 - Extends the User model to store additional information and personal preferences.
-- Fields: `user_profile_id`, `user_id`, `profile_image`, `bio`, `country`, `top_movies`, `top_series`, `top_music_albums`, `top_books`, `top_podcasts`, `top_miscellaneous`.
+- Fields: `title`, `status`, `slug`, `author`, `manufacturer`, `body`, `created_on`, `updated_on`, `bid_timer`, `price`, `current_bid`, `reserve`, `likes`.
 
-### `MediaCategory` Table
-- Stores the different categories for media types that users can select when creating a blog post.
-- Fields: `media_category_id`, `media_name`.
-
-### `BlogPost` Table
-- Stores individual blog posts written by users, with details about the media being discussed.
-- Fields: `blogpost_id`, `blog_title`, `slug`, `author_id`, `created_on`, `updated_on`, `content`, `excerpt`, `status`, `featured_image`, `media_category_id`, `release_year`, `media_link`, `likes`, `bookmarks`.
+### `Image` Table
+- Stores the watch images so that each listing can have mutiple images.
+- Fields: `image`
 
 ### `Comment` Table
 - Stores comments made by users on blog posts.
-- Fields: `comment_id`, `body`, `created_on`, `approved`, `blogpost_id`, `user_id`.
+- Fields: `listing`, `author`, `parent_comment`, `body`, `created_on`.
 
-This database schema lays out the structure for the Culture Club application, facilitating user interaction with blog posts, personalization of user profiles, categorization of posts by media type, and community engagement through comments, likes, and bookmarks.
-
+This database schema outlines the structure for WatchBidCentral, enabling user engagement with watch listings, personalization of user profiles, categorization of watches by manufacturer, and community interaction through bids, comments and likes.
 
 <br>
 
@@ -241,115 +213,53 @@ This database schema lays out the structure for the Culture Club application, fa
 
 # Design
 
-The design of Culture Club is crafted with a blend of nostalgia and modernity, reflecting the essence of cultural appreciation that spans generations. The choices in colors, fonts, and layout are intended to evoke a sense of familiarity and warmth, welcoming users to a community where culture in all its forms is cherished and discussed.
-
-### Design Choices
-
-Design choices were made with the intention of creating an inviting and user-friendly interface that also resonates with the theme of cultural nostalgia. The darker theme breaks from the contemporary trend of minimalistic and bright designs, offering a unique visual experience that aligns with the interests of culture enthusiasts who often have a fondness for timeless classics in movies, music, books, and more.
+The design of WatchBidCentral is meticulously crafted to resonate with the sophistication and elegance associated with luxury watches. The choice of colors, fonts, and layout are carefully selected to provide an upscale and professional feel, inviting users into a world of high-end watch collecting. The interface combines modern design principles with intuitive navigation, ensuring that both seasoned collectors and new enthusiasts can easily explore, bid, and list watches. The design aims to evoke trust and reliability, mirroring the quality and authenticity of the timepieces featured on the platform.
 
 ### Color
 
-In creating balanced interfaces that are both visually appealing and functional, we carefully selected a color palette that complements the overall theme of the site.
+For colour the template I used "https://startbootstrap.com/template/shop-homepage" had a very simple colour scheme that I opted to not chnang:
 
-![Color Palette image](docs/readme/colorpalette.png)
 
-**Dominant:**
+Primary Background Colour
 
-The choice of 'Gunmetal' Green, represented by #012326, as the dominant color, reflects the depth and richness of cultural history. This dark green hue sets a strong foundation for the site's design, providing a serene and focused backdrop for content exploration.
+ ![#FFFFFF](https://placehold.it/150x40/FFFFFF/000000?text=FFFFFF)
 
-**Secondary:**
+Secondary Background Colour
 
-'Munsell Blue', represented by #0794A7, serves as the secondary color. This choice is a nod to the vibrancy and dynamism of the cultural sphere. It not only complements the darker green but also adds a splash of energy and modern flair to the design.
+![#212529](https://placehold.it/150x40/212529/FFFFFF?text=212529)
 
-**Accent:**
 
-Our accent color is a carefully chosen shade of 'Burnt Orange', represented by #B9581B. This color provides a striking contrast to the greens and blue, drawing attention to important elements like buttons and calls to action. It brings a sense of excitement and highlights the interactive aspects of the site.
 
-**Other colors:**
-A softer shade of yellow 'Flax, represented by #E2DA83, used for inline links and smaller elements, adds a subtle yet effective highlight, ensuring that navigation elements are easily identifiable.
+Contrast Grid - Only AA and AAA options used.
 
-Instead of regular white text color, a bit more "greenbluish" shade of white called 'Light Cyan'represented by #CBEAF1, were chosen to blend well with all colors, yet still have great contrast. 
-
-### Fonts
-
-For the Culture Club site, we selected fonts that harmonize with our theme of blending the nostalgic with the contemporary. The H1 headers feature a distinctive font, 'Russo One', that resonates with the nostalgic 80-90's aspect of the site, while the classic Roboto font is used for the body text, ensuring readability and a modern touch. This combination of fonts not only enhances the aesthetic appeal but also contributes to an enjoyable user experience.
-
-### Structure
-
-The Culture Club website is designed with a user-friendly structure, ensuring seamless navigation and easy access to the website's diverse content about movies, music, books, podcasts, and more. Below is an overview of the website's structure:
+ <img src="assets\img\README_images\contrast grid.jpg" alt="Description" width= 600px>
 
 #### Before User Logs In:
 
-- **Landing Page with Sign In Form:** Upon arrival, users are greeted by a visually engaging landing page that doubles as a login portal. The page showcases a large, thematic image representing the site's focus on various cultural elements. Adjacent to the image is the login form, enabling existing users to quickly access their accounts. For newcomers, convenient links to the 'About Us' page and 'Sign Up' form are prominently displayed, inviting them to join the community.
+- **Home Page Featuring Top Listings:** Users land on a dynamic homepage that highlights the most liked and recent watch listings. The page features a sleek, modern design with high-quality images of watches, inviting users to explore the offerings. Navigation is streamlined through a top menu bar that includes links to various site sections, including 'Sell Your Watch,' 'Top Liked Watches,' and 'About Us.' For new visitors, clear calls to action for registration or login are prominently placed, ensuring easy access to the platform's full features.
 
-- **About Us:** This page provides insightful information about the Culture Club, its mission, and what new members can expect upon joining. It serves as an introduction to the site's ethos and community spirit.
+- **About Us:** This page provides insightful information about the platform, its mission, and what new members can expect upon joining. It serves as an introduction to the site's ethos, focusing on creating a secure and user-friendly environment for watch enthusiasts and collectors to buy and sell luxury watches.
 
-- **Sign Up:** A welcoming space for new users, the 'Join Us' page offers an easy and straightforward sign-up process, encouraging cultural enthusiasts to become a part of the vibrant Culture Club community.
+- **Register:** The 'Register' page invites new users to easily register, unlocking access to exclusive site features such as creating their own watch listings and managing their collections through 'My Listings'. This step is the gateway to actively participating in the watch enthusiast community, allowing users to buy, sell, and connect with others who share their passion.
+
 
 #### After User Logs In:
 
 Post-login, users gain access to a range of interactive and personalized features:
 
-- **Home Page (Inside the Culture Club):** The heart of the site, the home page presents the latest posts. Users can enjoy a broad overview of all posts or filter content by categories using the category selection buttons. Each post is displayed as an engaging card, featuring a clickable image (to the full post view), the title, a brief excerpt, author's name, and the number of likes.
-
-- **Full Blog Post View:** Each blog post can be viewed in its entirety on a dedicated page. This full view not only presents the complete content of the post, including images and detailed text, but also fosters user interaction and community engagement. Below each post, a comment section allows users to share their thoughts, engage in discussions, and connect with others. The author's name is linked to their user profile. Similarly, every user who comments has a clickable name that directs to their profile, enabling a deeper exploration of the community and fostering connections among users with similar interests.
-
-- **Create New Post:** A creative space where users can share their cultural insights. This form allows for the inclusion of relevant images, titles, excerpts, detailed blog content, release year (for movies, for instance), media category, and reference URLs. New posts, once published, are prominently displayed on the home page.
-
-- **My Posts:** A personalized collection of the user's blog posts. This page not only showcases their contributions but also offers 'Edit' and 'Delete' options for each post, giving users full control over their content.
-
-- **Bookmarked:** A curated list of the user's bookmarked posts, allowing for quick access to favorite articles and discussions. Users can easily bookmark or remove bookmarks as they navigate through the site.
-
-#### Profile Navigation:
-
-Accessing the profile icon in the navigation bar opens up more user-specific features:
-
-- **Profile Page:** A personal showcase featuring the user's profile picture, bio, country of origin, and their 'Top Selections' in various cultural categories like 'Movies', 'Series', 'Music Albums', etc. This page is a window into each user's unique tastes and interests.
-
-- **Edit Profile Page:** Users can update their profile details, ensuring their personal page reflects their evolving preferences and experiences.
-
-- **Manage Account:** A crucial feature for account management, this page allows users to delete their account. It includes clear warnings about the permanence of this action and requires confirmation to proceed, ensuring users make informed decisions.
-
-- **Log Out:** A simple yet secure logout process. Users are prompted to confirm their intention to log out, safeguarding their account access. Once logged out they get redirected to the log in landing page. 
+- **Create Listings:** A cornerstone feature of the platform, the 'Create Listings' page empowers users to become sellers in their own right. Here, members can list their watches for sale, providing detailed descriptions, setting prices, and uploading high-quality images to showcase their timepieces. This user-friendly interface is designed to guide sellers through the listing process, ensuring that each watch is presented in the best possible light to potential buyers. Whether you're a seasoned collector or looking to sell a single cherished piece, this feature makes it straightforward to connect with interested parties.
 
 
-### Wireframes
-The wireframes serve as a visual blueprint for the application. Click on each page to view the wireframe.
+- **View My Listings:** Designed for user convenience, the 'View My Listings' page is a personalized dashboard where sellers can manage their active listings. This section allows users to track the status of each watch they have put up for sale, including current bids, and direct messages from interested buyers. It's a central hub for all selling activities, offering tools to edit listings, update prices, or remove items if necessary. This feature ensures sellers have full control over their sales process, making it easy to manage their offerings in a structured and efficient manner.
 
-<details><summary>Landing page</summary>
-<img src="docs//readme/wireframes/landig_spage_signin.png">
-</details>
-<details><summary>About us</summary>
-<img src="docs/readme/wireframes/about_us.png">
-</details>
-<details><summary>Join the Club</summary>
-<img src="docs/readme/wireframes/create_account.png">
-</details>
-<details><summary>Home Page - Post Overview</summary>
-<img src="docs/readme/wireframes/home_post_overview.png">
-</details>
-<details><summary>Full Post View</summary>
-<img src="docs/readme/wireframes/full_post_view.png">
-</details>
-<details><summary>Create New Post</summary>
-<img src="docs/readme/wireframes/create_new_post.png">
-</details>
-<details><summary>Edit / Update Post</summary>
-<img src="docs/readme/wireframes/edit_update_post.png">
-</details>
-<details><summary>My Posts / Bookmarked</summary>
-<img src="docs/readme/wireframes/my_posts_bookmarked.png">
-</details>
-<details><summary>Manage Account</summary>
-<img src="docs/readme/wireframes/manage_account.png">
-</details>
-<details><summary>My Profile</summary>
-<img src="docs/readme/wireframes/my_profile.png">
-</details>
-<details><summary>User Profile</summary>
-<img src="docs/readme/wireframes/user_profile.png">
-</details>
 
+- **Edit Your Listings:** The 'Edit Your Listings' feature provides sellers with the flexibility to update their watch listings at any time. Whether it's adjusting the price, updating the description, or adding new images, sellers can ensure their listings are always accurate and appealing. This section is accessible directly from the 'View My Listings' dashboard, offering an intuitive interface for making changes. By supporting ongoing adjustments, this feature empowers sellers to respond to market demand, feedback from potential buyers, or changes in the condition or availability of their watches, maintaining the relevance and attractiveness of their offerings.
+
+
+- **Delete Your Listing:** This functionality allows sellers to remove their watch listings from the platform with ease. Whether the watch has been sold, withdrawn from sale, or for any other reason, sellers can quickly and securely delete their listings from their 'View My Listings' dashboard. This ensures that the platform remains up-to-date with only available watches being displayed, enhancing the buying experience for potential buyers. The deletion process is designed to be straightforward, with confirmation prompts to prevent accidental deletions, ensuring that sellers have full control over their listings on the site.
+
+
+- **Comment:** The comment feature enhances the interactive experience on the platform, allowing users to engage with listings in a meaningful way. Whether you're interested in learning more about a watch, seeking further details from the seller, or simply want to express admiration for a particular timepiece, the comment section is your space to communicate. This feature fosters a community atmosphere, enabling users to share insights, ask questions, and offer feedback directly on the listing page. It's an invaluable tool for both buyers and sellers to interact, clarify details, and build connections within the watch enthusiast community.
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 
@@ -383,32 +293,28 @@ The wireframes serve as a visual blueprint for the application. Click on each pa
 - **DB Diagram**: A tool for visualizing and creating database schemas, used for planning the database structure of Culture Club.
 - **Google Fonts**: A library of free, open-source fonts, used to enhance typography on the website.
 - **Font Awesome**: A library of icons and social logos, used for adding graphical elements to the Culture Club interface.
-- **DALL-E**: An AI generative image tool utilized for creating unique images for the landing page and blog post placeholder.
-- **Balsamiq**: A wireframing tool used for sketching and visualizing the layout and structure of the web project.
-
+- **ChatGPT**: An AI to help troubleshoot issues.
 
 ### Supporting Libraries and Packages
 
 - `asgiref==3.7.2`: foundational package for Django to support asynchronous web protocols like WebSockets.
-- `cloudinary==1.37.0`: integration library for Cloudinary - cloud service for storing and managing media files and assets.
+- `cloudinary==1.36.0`: integration library for Cloudinary - cloud service for storing and managing media files and assets.
 - `dj-database-url==0.5.0`: utility to help you configure your Django application's database from the DATABASE_URL environment variable.
 - `dj3-cloudinary-storage==0.0.6`: Django storage backend for Cloudinary to handle media and static files.
-- `Django==3.2.23`: Django web framework; the core framework for the web application.
-- `django-allauth==0.59.0`: integrated set of Django applications addressing authentication, registration, account management, and third-party (social) account authentication.
-- `django-crispy-forms==1.14.0`: Django app that provides a way to render Django forms in a DRY, configurable, and reusable way.
+- `Django==4.2.10`: Django web framework; the core framework for the web application.
+- `django-allauth==0.57.2`: integrated set of Django applications addressing authentication, registration, account management, and third-party (social) account authentication.
+- `django-crispy-forms==2.1`: Django app that provides a way to render Django forms in a DRY, configurable, and reusable way.
 - `django-summernote==0.8.20.0`: Django app that integrates the Summernote WYSIWYG editor for text fields.
-- `gunicorn==21.2.0`: Python WSGI HTTP Server for UNIX - robust and performant server to serve the Django application.
+- `gunicorn==20.1.0`: Python WSGI HTTP Server for UNIX - robust and performant server to serve the Django application.
 - `oauthlib==3.2.2`: generic, spec-compliant implementation of OAuth for use as a foundation for OAuth consumers and providers.
 - `psycopg2==2.9.9`: PostgreSQL database adapter for Python, a prerequisite for using PostgreSQL with Django.
 - `PyJWT==2.8.0`: Python library to encode and decode JSON Web Tokens (JWT), often used in authentication mechanisms.
 - `python3-openid==3.2.0`: Python 3 port of the Python OpenID library, used for OpenID authentication.
-- `pytz==2023.3.post1`: Python library that allows accurate and cross-platform timezone calculations.
+- `PyJWT==2.8.0`: Python library that allows accurate and cross-platform timezone calculations.
 - `requests-oauthlib==1.3.1`: An OAuthlib authentication support for Requests, which allows you to use OAuth to authenticate with APIs.
 - `sqlparse==0.4.4`: non-validating SQL parser for Python, useful for parsing and splitting SQL statements.
 - `urllib3==1.26.15`: powerful HTTP client for Python. Used by Requests internally.
-
-
-
+- `whitenoise==5.3.0`: efficiently serves static files in Django applications, enhancing performance.
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 
@@ -416,7 +322,7 @@ The wireframes serve as a visual blueprint for the application. Click on each pa
 
 # Methodology
 
-The Culture Club project follows a methodology inspired by agile principles, fostering collaboration, flexibility, and gradual development. The outlined approach has guided the project's evolution:
+The WatchBidCentral project adheres to an agile-inspired methodology, promoting teamwork, adaptability, and incremental development. This strategy has steered the project's progress:
 
 ### Agile Project Management with GitHub Projects
 To streamline project management, GitHub Projects is employed as a central hub. User stories and tasks are structured as GitHub issues, creating an organized workflow. The GitHub project board serves as a visual representation, tracking progress effectively.
@@ -424,172 +330,46 @@ To streamline project management, GitHub Projects is employed as a central hub. 
 ### User Stories as GitHub Issues
 Transforming user stories into GitHub issues captures user-centric functionalities. These issues interlink with respective user stories, simplifying access to criteria, tasks, and comments.
 
-### Bug Tracking for Seamless Development
-Bugs uncovered during development are documented as GitHub issues, offering insights into each bug's characteristics, impact, and reproduction steps. By hyperlinking these issues in README.md, users can stay updated on bug resolutions and contribute insights.
-
-### Iterative Development Approach
-The Culture Club project adheres to an iterative development approach, facilitating continuous enhancements within a predefined timeline. Despite its condensed schedule, the project accommodates future iterations and expansions.
-
-### Future Backlog and Progress
-The project board efficiently manages user stories, with the "Not started" column representing upcoming iterations. This backlog previews user stories set for subsequent development phases.
-
-Emphasizing that the project timeline is expedited, the iterative approach maintains adaptability, enabling ongoing refinements and improvements aligned with evolving user needs.
-
-**Labels and User Story Distribution (MoSCoW):**
-
-### Must-Have:
-- User Account Registration [#2](https://github.com/DebbieBergstrom/Culture-Club/issues/2)
-- Log In and Out of User Account [#3](https://github.com/DebbieBergstrom/Culture-Club/issues/3)
-- Edit User Bio and Profile Picture [#4](https://github.com/DebbieBergstrom/Culture-Club/issues/4)
-- User Create & Edit Blog Posts [#7](https://github.com/DebbieBergstrom/Culture-Club/issues/7)
-- Comment Blog Posts + Edit [#8](https://github.com/DebbieBergstrom/Culture-Club/issues/8)
-- Read Full Post Detail [#12](https://github.com/DebbieBergstrom/Culture-Club/issues/12)
-- Admin - Full Control Over User Accounts [#13](https://github.com/DebbieBergstrom/Culture-Club/issues/13)
-- Navigate to Join the Club Section [#19](https://github.com/DebbieBergstrom/Culture-Club/issues/19)
-- Easy Login from Landing Page [#20](https://github.com/DebbieBergstrom/Culture-Club/issues/20)
-- Navigate through a well designed website [#33](https://github.com/DebbieBergstrom/Culture-Club/issues/33)
-
-### Should-Have:
-- Like/ Unlike Blog Posts [#9](https://github.com/DebbieBergstrom/Culture-Club/issues/9)
-- View Other Users' Profiles [#10](https://github.com/DebbieBergstrom/Culture-Club/issues/10)
-- See Post Overview [#11](https://github.com/DebbieBergstrom/Culture-Club/issues/11)
-- Admin - Review and Edit User-Submitted Blog Posts [#14](https://github.com/DebbieBergstrom/Culture-Club/issues/14)
-- Visually Appealing Landing Page [#17](https://github.com/DebbieBergstrom/Culture-Club/issues/17)
-- Navigate to About Us [#18](https://github.com/DebbieBergstrom/Culture-Club/issues/18)
-- Site pagination for easy navigation [#32](https://github.com/DebbieBergstrom/Culture-Club/issues/32)
-- Receive Validating Messages [#37](https://github.com/DebbieBergstrom/Culture-Club/issues/32)
-- Receive Page Error Messages [#42](https://github.com/DebbieBergstrom/Culture-Club/issues/32)
-
-### Could-Have:
-- Favourite Lists in Personal Bio [#5](https://github.com/DebbieBergstrom/Culture-Club/issues/5)
-- Bookmark Blog Posts [#29](https://github.com/DebbieBergstrom/Culture-Club/issues/29)
-- Admin - Manage and Categorize Blog Posts [#15](https://github.com/DebbieBergstrom/Culture-Club/issues/15)
-
-### Won't-Have:
-- Password Reset [#43](https://github.com/DebbieBergstrom/Culture-Club/issues/43)
-- Follow Other Users [#30](https://github.com/DebbieBergstrom/Culture-Club/issues/30)
-- Admin - Track User Engagement and Analytics [#16](https://github.com/DebbieBergstrom/Culture-Club/issues/16)
-
-For a comprehensive view of the project's trajectory, user stories, and bug tracking, explore the [Kanban board](https://github.com/users/DebbieBergstrom/projects/4/views/1).
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 
 ---
 
 # Features
 ### Login Landing Page:
-- Description: The landing page provides a welcoming first impression with easy access to login and information about the site. The navigation bar and footer is visible on every page.
-<details><summary>See Screenshot **Landingpage, large**</summary><img src="docs/features/login_landing_page.png"></details>
-<details><summary>See Screenshot **Landingpage, mobile**</summary><img src="docs/features/login_landing_page_sm.png"></details>
-<details><summary>See Screenshot **Navigation bar**</summary><img src="docs/features/navbar_logged_out.png"></details>
-<details><summary>See Screenshot **Footer**</summary><img src="docs/features/footer.png"></details>
+- Description: The landing page provides a carousel of most liked listings and a list of watches ordered by created date.
+<details><summary>See Screenshot **Landingpage, large**</summary><img src="assets\img\README_images\index.jpg" width= 600px></details>
+<details><summary>See Screenshot **Landingpage, mobile**</summary><img src="assets\img\README_images\index mobile.jpg" width= 300px></details>
 
 ### About Us:
-- Description: A detailed section introducing users to the concept and team behind Culture Club. 
-<details><summary>See Screenshot **About us, large**</summary><img src="docs/features/about_us.png"></details>
-<details><summary>See Screenshot **About us, mobile**</summary><img src="docs/features/about_us_sm.png"></details>
+- Description: A detailed section about the company and services. 
+<details><summary>See Screenshot **About us, large**</summary><img src="assets\img\README_images\about.jpg" width= 600px></details>
+<details><summary>See Screenshot **About us, mobile**</summary><img src="assets\img\README_images\about mobile.jpg" width= 300px></details>
 
-### Join the Club/ Sign Up:
-- Description: A straightforward sign-up page enabling new users to join the community.
-<details><summary>See Screenshot **Sign Up, large**</summary><img src="docs/features/sign_up.png"></details>
-<details><summary>See Screenshot **Sign Up, mobile**</summary><img src="docs/features/sign_up_sm.png"></details>
+### Create Listing:
+- Description: A form to create a new listing to host on the site.
+<details><summary>See Screenshot **Sign Up, large**</summary><img src="assets\img\README_images\create listing.jpg" width= 600px></details>
+<details><summary>See Screenshot **Sign Up, mobile**</summary><img src="assets\img\README_images\create listing mobile.jpg" width= 300px></details>
 
-### Home / Index Blog Post view (Logged in User):
-- A dynamic homepage showcasing the latest blog posts, with user-friendly navigation and category filtering. When user is logged in the navigation bar has more links. Site pagination is seen at the bottom to see more pages of posts. 
-<details><summary>See Screenshot **Login, success message**</summary><img src="docs/features/msg_signed_in.png"></details>
-<details><summary>See Screenshot **Home Page, large**</summary><img src="docs/features/index.png"></details>
-<details><summary>See Screenshot **Home Page, mobile**</summary><img src="docs/features/index_sm.png"></details>
-<details><summary>See Screenshot **Navbar, logged in user**</summary><img src="docs/features/navbar_logged_in.png"></details>
-<details><summary>See Screenshot **Site pagination 'next'**</summary><img src="docs/test.md/userstories/us_pagination_next.png"></details>
-<details><summary>See Screenshot **Site pagination 'prev'**</summary><img src="docs/test.md/userstories/us_pagination_prev.png"></details>
-<details><summary>See Screenshot **Category active button**</summary><img src="docs/features/category_active_button.png"></details>
+### Liked Listings:
+- Description: A filtered view of all the watch listings by most liked.
+<details><summary>See Screenshot **Sign Up, large**</summary><img src="assets\img\README_images\liked listings.jpg" width= 600px></details>
+<details><summary>See Screenshot **Sign Up, mobile**</summary><img src="assets\img\README_images\liked listings mobile.jpg" width= 300px></details>
 
-### Read Full Post:
-- Description: An immersive page for reading entire blog posts, complete with like, bookmark, and comment functionalities.
-<details><summary>See Screenshot **Read Full Post, large**</summary><img src="docs/features/create_new_post.png"></details>
-<details><summary>See Screenshot **Read FullPost, mobile**</summary><img src="docs/features/create_new_post_sm.png"></details>
-<details><summary>See Screenshot **Like Post**</summary><img src="docs/test.md/userstories/us_like_post.png"></details>
-<details><summary>See Screenshot **Unlike Post**</summary><img src="docs/test.md/userstories/us_unliked.png"></details>
-<details><summary>See Screenshot **Bookmark Post**</summary><img src="docs/test.md/userstories/us_bookmarked.png"></details>
-<details><summary>See Screenshot **Unbookmark Post**</summary><img src="docs/test.md/userstories/us_unbookmarked.png"></details>
-<details><summary>See Screenshot **Comment Post**</summary><img src="docs/features/us_blogpost_comment.png"></details>
-
-### Create New Post:
-- Description: A user-friendly interface for creating new blog posts, with fields for title, content, images, and more. Validating message displays when post is successfully created.
-<details><summary>See Screenshot **Create New Post, large**</summary><img src="docs/features/create_new_post.png"></details>
-<details><summary>See Screenshot **Create New Post, mobile**</summary><img src="docs/features/create_new_post_sm.png"></details>
-<details><summary>See Screenshot **Create New Post, success message**</summary><img src="docs/features/msg_post_created.png"></details>
-
-### Edit Post:
-- Description: Allows users to make changes to their existing blog posts, with an intuitive editing interface. Validating message displays when post is successfully updated.
-<details><summary>See Screenshot **Edit Post, large**</summary><img src="docs/test.md/userstories/us_edit_post.png"></details>
-<details><summary>See Screenshot **Edit Post, mobile**</summary><img src="docs/features/edit_post_sm.png"></details>
-<details><summary>See Screenshot **Edit Post, success message**</summary><img src="docs/features/msg_post_updated.png"></details>
-
-### Delete Post:
-- Description: A confirmation page for users to delete their blog posts, ensuring mindful content management. Validating message displays when post is successfully deleted.
-<details><summary>See Screenshot **Delete Post, large**</summary><img src="docs/features/delete_post.png"></details>
-<details><summary>See Screenshot **Delete Post, mobile**</summary><img src="docs/features/delete_post_sm.png"></details>
-<details><summary>See Screenshot **Delete Post, success message**</summary><img src="docs/features/msg_post_deleted.png"></details>
-
-### My Posts:
-- Description: A dedicated space for users to view and manage all their published blog posts.
-<details><summary>See Screenshot **My Posts, large**</summary><img src="docs/features/my_posts.png"></details>
-<details><summary>See Screenshot **My Posts, mobile**</summary><img src="docs/features/my_posts_sm.png"></details>
-
-### Bookmarked page:
-- Description: A special page for users to view all their bookmarked blog posts for easy access. 
-<details><summary>See Screenshot **Bookmarked, large**</summary><img src="docs/features/bookmarked.png"></details>
-<details><summary>See Screenshot **Bookmarked, mobile**</summary><img src="docs/features/bookmarked_sm.png"></details>
-
-### User Profiles:
-- Description: A comprehensive profile page displaying user information, top picks in various media categories and profile image. If it's the logged in users own profile, the links to 'Edit Profile' and 'Manage Account' is visible.
-<details><summary>See Screenshot **Owner User Profile with uploaded image, large**</summary><img src="docs/test.md/userstories/us_own_user_profile.png"></details>
-<details><summary>See Screenshot **Owner User Profile with placeholder image, mobile**</summary><img src="docs/features/user_profile_placeholderimg_sm.png"></details>
-<details><summary>See Screenshot **Other User Profile without edit/manage links**</summary><img src="docs/test.md/userstories/us_other_user.png"></details>
-
-
-### Edit Profile:
--  An edit profile page allowing users to update their personal information and preferences. Validating message displays when profile is successfully updated.
-<details><summary>See Screenshot **Edit Profile, placeholder image default, large**</summary><img src="docs/features/edit_profile_placeholder.png"></details>
-<details><summary>See Screenshot **Edit Profile, placeholder image default, mobile**</summary><img src="docs/features/edit_profile__placeholder_ sm.png"></details>
-<details><summary>See Screenshot **Edit Profile, success message**</summary><img src="docs/features/msg_profile_updated.png"></details>
-
-
-### Manage Account / Delete Profile:
-- Provides users with account management option to be able to delete their account. When confirmed 'Delete Account' button is clicked there's an extra layer of confirmation for security when a popup warning ask for one more confirm.
-<details><summary>See Screenshot **Manage Account, large**</summary><img src="docs/features/manage_account.png"></details>
-<details><summary>See Screenshot **Manage Account, mobile**</summary><img src="docs/features/manage_account_sm.png"></details>
-<details><summary>See Screenshot **Manage Account, extra on click Delete Warning**</summary><img src="docs/features/onclick-delete_warning.png"></details>
-
-### Logout:
-- A simple and secure logout process, ensuring users can safely exit their account. Validating message displays when user is successfully logged out.
-<details><summary>See Screenshot **Log out, large**</summary><img src="docs/features/log_out.png"></details>
-<details><summary>See Screenshot **Log out, mobile**</summary><img src="docs/features/log_out_sm.png"></details>
-<details><summary>See Screenshot **Log out, success message**</summary><img src="docs/features/msg_signed_out.png"></details>
-
+### My Listings:
+- Description: A view for a seller of their listings to manage them.
+<details><summary>See Screenshot **Sign Up, large**</summary><img src="assets\img\README_images\my listings.jpg" width= 600px></details>
+<details><summary>See Screenshot **Sign Up, mobile**</summary><img src="assets\img\README_images\my listings mobile.jpg" width= 300px></details>
 
 ### Future Features
-Here are some exciting features that I would like to add to the Culture Club in the future:
+Here are some exciting features that I would like to add to the site in the future:
 
 | Feature | Description |
 | --- | --- |
-| **Forgot Password Functionality** | Implement the ability for users to retrieve a new password if forgotten. [User Story #43](https://github.com/DebbieBergstrom/Culture-Club/issues/43) |
-| **User Engagement and Analytics Tracking for Admin** | Enhance admin capabilities to track user engagement and analytics for improved user experience. [User Story #16](https://github.com/DebbieBergstrom/Culture-Club/issues/16) |
-| **User Follow Functionality** | Allow users to follow other users to stay updated on their activities and posts. [User Story #30](https://github.com/DebbieBergstrom/Culture-Club/issues/30) |
+| **Restrict Likes to one per site user** | Implement the restriction to limit the times a person can like a post. |
+| **Nested Comments** | Implement nested comments to all for greater depth in engagement |
+| **Bid Timer** | Allow a seller to set a timer on the listing |
 | **Comment Editing and Deletion** | Enable users to edit and delete their comments for better content control. |
-| **Nested Comment Fields** | Implement nested comments for a more organized and engaging discussion interface. |
-| **Improved Image Resizing** | Enhance image uploading experience with better resizing options and user guidance on image handling. |
-| **File Size Restrictions for Images** | Implement restrictions on image file size or functions to automatically downscale images for optimal performance. |
-| **Social Account Login Integration** | Enable login through social media accounts for a more seamless user experience. |
-| **User's Blog Posts on Profile** | Display a list of a user's blog posts on their profile for easier access by others. |
-| **User's social media links in profile** | Optionally the user can let other users know their presence on other social platforms. |
-| **Additional Back-Buttons** | Improve site navigation with more back-buttons for seamless user interaction. |
-| **Contact Form for Site Feedback** | Introduce a contact form for users to report bugs or inappropriate behavior within the community. |
-| **Community Guidelines and Policy Page** | Establish a page outlining community rules and policies, including respect and decorum among users. |
-| **Search Functions** | Add a search function to allow users to find specific blog posts and other users easily. |
-| **Design Improvements** | Continual enhancements in design, including better headings and text sizing for various screen sizes. |
 |  |  |
-
 
 <br>
 
@@ -599,9 +379,74 @@ Here are some exciting features that I would like to add to the Culture Club in 
 
 # Testing
 
-The Culture Club website went through a comprehensive testing process to guarantee its functionality, accessibility, and performance. This included checking the code, such as code validation, accessibility assessment, performance testing, cross-device testing, verification of browser compatibility, assessment of user stories, and the integration of user feedback to enhance the overall user experience.
+WatchBidCentral underwent extensive testing to ensure its functionality, accessibility, and performance were up to standard. This rigorous process included code validation, accessibility checks, performance evaluation, cross-device compatibility testing, browser compatibility confirmation, reviewing user stories, and incorporating user feedback to improve the overall experience.
 
-All testing was carried out and documented in [testing.md](https://github.com/DebbieBergstrom/Culture-Club/blob/main/TESTING.md). 
+### Automated testing
+
+The files are located in each app, in a folder called "Tests". to run the test run "python manage.py test" from a terminal.
+
+#### Manual Testing
+
+- The website was tested on Google Chrome and Microsoft Edge.
+- The website was viewed on various monitors and resolutions and on a Pixel 7 mobile phone.
+- Chrome Dev Tools was used to test how the site looks on various screen sizes.
+
+<details>
+<summary>Linter - PASS</summary>
+
+  - Javascript tested on both sites with no significant errors
+
+    - [JSHint](https://jshint.com/)
+    - [JSLint](https://www.jslint.com/)
+</details>
+
+<details>
+<summary>Lighthouse  -  PASS</summary>
+
+- Desktop
+
+    <img src="assets\img\README_images\lighthouse.jpg" width="550" height="150">
+
+- Mobile
+
+    <img src="assets\img\README_images\lighthouse mobile.jpg" width="550" height="150">
+</details>
+
+
+
+<details>
+<summary>W3C Markup Validtor - PASS</summary>
+    <img src="assets\images\README-images\html_validate.png" alt="Description">        
+</details>
+
+<details>
+<summary>W3C CSS Validator - PASS</summary>
+<img src="assets\images\README-images\css_validate.png" alt="Description">        
+</details>
+
+<detailS>
+<summary>Responsive - PASS</summary>
+
+- Resolutions checked
+
+    - 320x568: Used by small smartphones or devices in portrait mode.
+    - 375x667: Used by smartphones like iPhone 6/7/8 in portrait mode.
+    - 360x640: Common resolution for many budget and mid-range smartphones.
+    - 414x896: Found on various iPhone models like iPhone X, XS, 11 Pro, and 12 Pro.
+    - 768x1024: Common resolution for tablets in portrait mode, such as the iPad.
+    - 1024x768: Another common resolution for tablets, especially in landscape mode.
+    - 1280x800: Common resolution for smaller laptops and tablets.
+    - 1366x768: Common for laptops and desktop monitors.
+    - 1920x1080: Full HD resolution, used on larger monitors, laptops, and some mobile   devices.
+    
+</details>
+
+#### Manual Testing
+
+- The website was tested on Google Chrome and Microsoft Edge.
+- The website was viewed on various monitors and resolutions and on a Pixel 7 mobile phone.
+- Chrome Dev Tools was used to test how the site looks on various screen sizes.
+
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 
@@ -737,51 +582,6 @@ To manage version control and push code to the main repository on GitHub using G
  **Migrate Models:**
     - In the terminal, migrate the models to the new database connection.
 
-### Forking the Repository:
-
-By forking the GitHub Repository, can create a copy of the original repository without affecting the original. Follow these steps:
-
- **GitHub Account Setup:**
-   - Log into GitHub account or create one if you don't have one.
-
- **Locate the Repository:**
-   - Find the repository at https://github.com/DebbieBergstrom/Culture-Club.
-
- **Fork the Repository:**
-   - At the top right of the repository page, click "Fork" to create a copy in your own GitHub repository.
-
-### Clone of the Repository:
-
-Creating a clone allows you to have a local copy of the project. Follow these steps:
-
- **Repository URL:**
-   - Navigate to https://github.com/DebbieBergstrom/Culture-Club.
-   - Click the green "Code" button at the top right.
-
- **Clone the Repository:**
-   - Select the "Clone by HTTPS" option and copy the provided URL to the clipboard.
-
- **Terminal and Git:**
-   - Open your code editor or terminal and navigate to the directory where you want to clone the repository.
-   - Run `git clone` followed by the copied URL.
-   - Press enter, and Git will clone the repository to your local machine.
-
-
-To fork the repository, follow these steps:
-
-1. Go to the GitHub repository.
-2. Click on the Fork button in the upper right-hand corner.
-3. Wait for the forking process to complete. Once done, you will have a copy of the repository in your GitHub account.
-
-To clone the repository, follow these steps:
-
-1. Go to the GitHub repository.
-2. Locate the Code button above the list of files and click it.
-3. Select your preferred method for cloning: HTTPS, SSH, or GitHub CLI, and click the copy button to copy the repository URL to your clipboard.
-4. Open Git Bash (or your preferred terminal).
-5. Change the current working directory to the location where you want the cloned directory to be created.
-6. Type the command `git clone` followed by the URL you copied in step 3. The command should look like this: `git clone https://github.com/DebbieBergstrom/Culture-Club`.
-7. Press Enter to create your local clone.
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 
