@@ -10,13 +10,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <title>WBC - Watch Bid Central</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Template CSS -->
@@ -38,46 +38,38 @@
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link {% if request.path == '/' %}active{% endif %}"
-                            aria-current="page" href="{% url 'buy:home' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link {% if request.path == '/' %}active{% endif %}" aria-current="page" href="{% url 'buy:home' %}">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% if user.is_authenticated %}<!-- "and user.is_verified" add when verfied added  -->
-                            <li><a class="nav-link" href="{% url 'sell:create-listing' %}">Create Listing</a>
-                            </li>
-                            <li>
-                                <hr class="dropdown-divider" />
-                            </li>
+                            {% if user.is_authenticated %}
+                            <li><a class="dropdown-item" href="{% url 'sell:create-listing' %}">Create Listing</a></li>
+                            <li><hr class="dropdown-divider" /></li>
                             {% endif %}
                             <li><a class="dropdown-item" href="{% url 'sell:my-listings' %}">My Listings</a></li>
                             <li><a class="dropdown-item" href="{% url 'buy:top-liked-listings' %}">Most Liked Listings</a></li>
                         </ul>
                     </li>
-                    <!-- Added About Page with Dynamic Active Class -->
-                    <li class="nav-item"><a class="nav-link {% if request.path == '/about-us/' %}active{% endif %}"
-                            href="/about/">About Us</a></li>
-
-                    <!-- Authentication Links -->
-                    <!-- Right-aligned items for showing logged-in user's name -->
-                    <ul class="navbar-nav">
-                        {% if user.is_authenticated %}
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ user.username }}
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownUser">
-                                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
-                                <!-- Add more user-specific items here if needed -->
-                            </ul>
-                        </li>
-                        {% else %}
-                        <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">Register</a></li>
-                        {% endif %}
-                    </ul>
+                    <li class="nav-item"><a class="nav-link {% if request.path == '/about-us/' %}active{% endif %}" href="/about/">About Us</a></li>
+                </ul>
+                
+                <!-- Authentication Links -->
+                <ul class="navbar-nav ms-auto">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ user.username }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownUser">
+                            <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                        </ul>
+                    </li>
+                    {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">Register</a></li>
+                    {% endif %}
+                </ul>
+                
             </div>
         </div>
     </nav>
