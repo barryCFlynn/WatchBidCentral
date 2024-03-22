@@ -12,8 +12,9 @@ from .models import Listing, Comment
 class ListingsList(ListView):
     model = Listing
     template_name = "buy/index.html"
-    context_object_name = 'listing_list'  # This will be used to access the listings in the template
-    queryset = Listing.objects.filter(status=1).order_by('-created_on')  # Adjusted for clarity
+    # This will be used to access the listings in the template
+    context_object_name = 'listing_list'
+    queryset = Listing.objects.filter(status=1).order_by('-created_on')
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
@@ -22,10 +23,12 @@ class ListingsList(ListView):
         context['like_listings'] = Listing.objects.order_by('-likes')[:7]
         return context
 
+
 class TopLikedListingsView(ListView):
     model = Listing
     template_name = "buy/top_liked_list.html"
-    context_object_name = 'listing_list'  # You can customize this to match your template context
+    # You can customize this to match your template context
+    context_object_name = 'listing_list'
 
     def get_queryset(self):
         """Override to return listings ordered by likes."""
@@ -34,26 +37,14 @@ class TopLikedListingsView(ListView):
 
 
 def watch_detail(request, slug):
-    """
-    Display an individual :model:`buy.Listing` and its comments ordered by most recent.
-
-    **Context**
-
-    ``listing``
-        An instance of :model:`buy.Listing`.
-    ``comments``
-        Ordered comments related to the listing.
-
-    **Template:**
-
-    :template:`buy/watch_detail.html`
-    """
     listing = get_object_or_404(Listing, slug=slug)
-    comments = listing.comments.order_by('-created_on')  # Get comments ordered by most recent
-    
+    # Get comments ordered by most recent
+    comments = listing.comments.order_by('-created_on')
+
     return render(request, 'buy/watch_detail.html', {
         'listing': listing,
-        'comments': comments,  # Pass the ordered comments to the template
+        # Pass the ordered comments to the template
+        'comments': comments,
     })
 
 
@@ -67,29 +58,34 @@ def like_listing(request, listing_id):
     listing.save()
     return JsonResponse({'likes': listing.likes})
 
+
 @login_required
 def add_comment_to_listing(request, slug):
     listing = get_object_or_404(Listing, slug=slug)
     if request.method == "POST":
         comment_body = request.POST.get('comment')
-        comment = Comment(listing=listing, author=request.user, body=comment_body)
+        comment = Comment(
+            listing=listing, author=request.user, body=comment_body)
         comment.save()
         return redirect('watch_detail', slug=slug)
     else:
         # Optionally handle the case for GET request or show an error
         return redirect('watch_detail', slug=listing.slug)
 
+
 @login_required
 def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
-    
+
     if request.user == comment.author or request.user.is_superuser:
-        listing_slug = comment.listing.slug  # Store listing slug to redirect back to listing detail
+        # Store listing slug to redirect back to listing detail
+        listing_slug = comment.listing.slug
         comment.delete()
         messages.success(request, "Comment deleted successfully.")
         return redirect('watch_detail', slug=listing_slug)
     else:
-        messages.error(request, "You don't have permission to delete this comment.")
+        messages.error(
+            request, "You don't have permission to delete this comment.")
         return redirect('watch_detail', slug=comment.listing.slug)
 
 
@@ -109,14 +105,16 @@ def place_bid(request, listing_id):
     if bid_amount > current_bid:
         listing.current_bid = bid_amount
         listing.save()
-        
+
         # Optionally, create a comment noting the bid
         formatted_bid_amount = "€ {:,.2f}".format(bid_amount)
         comment_text = f"Bid placed: {formatted_bid_amount}"
-        Comment.objects.create(listing=listing, author=request.user, body=comment_text)
-        
+        Comment.objects.create(
+            listing=listing, author=request.user, body=comment_text)
+
         # Redirect to the listing detail view or another success page
         return redirect('buy:watch_detail', slug=listing.slug)
     else:
         # Handle the case where the bid is not higher than the current bid
-        return HttpResponse("Bid must be higher than the current bid.", status=400)
+        return HttpResponse(
+            "Bid must be higher than the current bid.", status=400)

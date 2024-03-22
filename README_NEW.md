@@ -381,11 +381,22 @@ Here are some exciting features that I would like to add to the site in the futu
 
 WatchBidCentral underwent extensive testing to ensure its functionality, accessibility, and performance were up to standard. This rigorous process included code validation, accessibility checks, performance evaluation, cross-device compatibility testing, browser compatibility confirmation, reviewing user stories, and incorporating user feedback to improve the overall experience.
 
-### Automated testing
+## Automated testing
 
-The files are located in each app, in a folder called "Tests". to run the test run "python manage.py test" from a terminal.
+### Python Testing
 
-#### Manual Testing
+The files are located in each app, in a folder called "Tests". to run the test run "python manage.py test" from a terminal.Extensive unit tests were written for the Python code in Django.
+
+<img src="assets\img\README_images\django test.jpg" width="550" height="150">
+
+### Python Linting
+
+Python linting was carried out with https://pep8ci.herokuapp.com/.
+
+There were no warnings left in the production code apart from the ‘line too long’ errors on the boilerplate Django code in ‘settings.py’.
+
+
+## Manual Testing
 
 - The website was tested on Google Chrome and Microsoft Edge.
 - The website was viewed on various monitors and resolutions and on a Pixel 7 mobile phone.
