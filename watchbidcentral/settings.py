@@ -33,7 +33,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "8000-barrycflynn-watchbidcen-wl2gcpiqcxa.ws-eu110.gitpod.io",
-    "*.herokuapp.com",
+    "watch-bid-central-95b83adfb641.herokuapp.com",
+    "watch-bid-central-984c5e15f9c3.herokuapp.com",
 ]
 
 
