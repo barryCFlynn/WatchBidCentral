@@ -13,7 +13,7 @@ Embracing the legacy and innovation of the watchmaking tradition, WatchBidCentra
 </center>
 
 Developer: [Barry Flynn](https://github.com/barryCFlynn/) <br>
-[Live webpage](https://watch-bid-central-95b83adfb641.herokuapp.com/)<br>
+[Live webpage](https://watch-bid-central-984c5e15f9c3.herokuapp.com/)<br>
 [Project Repository](https://github.com/barryCFlynn/WatchBidCentral)<br>
 
 ## Badges
